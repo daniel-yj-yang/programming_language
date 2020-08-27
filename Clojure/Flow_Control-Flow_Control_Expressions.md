@@ -70,10 +70,13 @@ nil
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; cond (like switch) is a series of tests and expressions.
 ;; Each test is evaluated in order and the expression is evaluated and returned for the first true test.
+;; If no test is satisfied, nil is returned.
+;; Keywords (like :else) always evaluate to true so this will always be selected as a default.
 
 user=> (cond
     (< x 2) "x is less than 2"
     (< x 10) "x is less than 10"
-    () "x is some value else")
+    :else "x is some value else")
 "x is some value else"
+
 ```
