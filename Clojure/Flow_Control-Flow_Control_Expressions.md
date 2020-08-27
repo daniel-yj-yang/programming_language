@@ -66,4 +66,14 @@ x must be even: 1230132
 user=> (when (odd? x)
   (throw (RuntimeException. (str "x must be even: " x))))
 nil
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; cond (like switch) is a series of tests and expressions.
+;; Each test is evaluated in order and the expression is evaluated and returned for the first true test.
+
+user=> (cond
+    (< x 2) "x is less than 2"
+    (< x 10) "x is less than 10"
+    () "x is some value else")
+"x is some value else"
 ```
