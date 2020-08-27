@@ -1,2 +1,2 @@
 
-Machine Learning application
+Machine Learning applications using Clojure
