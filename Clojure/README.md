@@ -16,3 +16,8 @@
 
 - Content in this page and those nested within it are primarily based on the <a href="https://clojure.org/guides/learn/syntax">clojure.org learning guide</a>, but with many of my own examples.
 
+<hr>
+
+## Reference
+
+- <a href="https://www.braveclojure.com/getting-started/">Create an executable JAR file</a>
