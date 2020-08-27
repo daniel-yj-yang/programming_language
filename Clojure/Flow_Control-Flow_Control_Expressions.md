@@ -95,4 +95,13 @@ user=> (foo 50)
 Execution error (IllegalArgumentException) at user/foo (REPL:2).
 No matching clause: 50
 
+user=> (defn foo [x] ;; an else expression can be added too
+(case x
+10 "x is 10"
+20 "x is 20"
+"x isn't 10 or 20"))
+#'user/foo
+
+user=> (foo 50)
+"x isn't 10 or 20"
 ```
