@@ -34,7 +34,7 @@ Example:
 ```Clojure
 user=> (defn Example []
    (loop [x 10]               ;; first binding the value of 'x' to 10 using the loop statement
-      (when (> x 1)           ;; then using the when condition clause to see if the value of 'x' < 1
+      (when (> x 1)           ;; then using the when condition clause to see if the value of 'x' > 1
          (println x)          ;; then printing the value of 'x' to the console
          (recur (- x 2)))))   ;; finally using the recur statement to repeat the loop, after the value of 'x' is decremented by 2
 #'user/Example
@@ -50,9 +50,9 @@ nil
 
 Example:
 ```Clojure
-user=> (loop [i 0]
-  (if (< i 10)
-    (recur (inc i))
+user=> (loop [i 0]      ;; first binding the value of 'i' to 0 using the loop statement
+  (if (< i 10)          ;; then using the if condition clause to see if the value of 'i'
+    (recur (inc i))     ;; then using the recur statement to repeat the loop, after the value of 'i' is incremented by 1
     i))
 10
 ```
