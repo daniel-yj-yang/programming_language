@@ -14,3 +14,11 @@
 
 <hr>
 
+Example:
+```Clojure
+user=> (def x 1230132)
+#'user/x
+
+user=> (str x " is " (if (even? x) "even" "odd")) ;; if, the conditional expression
+"1230132 is even"
+```
