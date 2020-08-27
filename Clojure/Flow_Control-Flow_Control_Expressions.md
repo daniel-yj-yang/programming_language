@@ -68,7 +68,7 @@ user=> (when (odd? x)
 nil
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; cond (like switch) is a series of tests and expressions.
+;; cond (like switch in R) is a series of tests and expressions.
 ;; Each test is evaluated in order and the expression is evaluated and returned for the first true test.
 ;; If no test is satisfied, nil is returned.
 ;; Keywords (like :else) always evaluate to true so this will always be selected as a default.
@@ -78,5 +78,21 @@ user=> (cond
     (< x 10) "x is less than 10"
     :else "x is some value else")
 "x is some value else"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; case, is similar to cond, except that it will throw an exception if no value matches.
+
+user=> (defn foo [x]
+(case x
+10 "x is 10"
+20 "x is 20"))
+#'user/foo
+
+user=> (foo 10)
+"x is 10"
+
+user=> (foo 50)
+Execution error (IllegalArgumentException) at user/foo (REPL:2).
+No matching clause: 50
 
 ```
