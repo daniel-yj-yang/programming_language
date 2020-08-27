@@ -35,8 +35,8 @@ user=> (defn Example []
       (when (> x 1)
          (println x)
          (recur (- x 2)))))
-         
 #'user/Example
+
 user=> (Example)
 10
 8
