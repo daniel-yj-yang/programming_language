@@ -14,6 +14,18 @@
 
 <hr>
 
+#### 1. Recursion and Iteration
 
+<hr>
+
+#### 2. loop and recur
+
+<hr>
+
+#### 3. defn and recur
+
+<hr>
+
+#### 4. recur for recursion
 
 
