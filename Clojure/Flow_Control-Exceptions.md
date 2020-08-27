@@ -29,4 +29,15 @@ cleanup
 2
 ```
 
+<hr>
 
+#### 2. Throwing exceptions
+
+```Clojure
+user=> (try
+  (throw (Exception. "something went wrong"))
+  (catch Exception e (.getMessage e)))
+"something went wrong"
+```
+
+<hr>
