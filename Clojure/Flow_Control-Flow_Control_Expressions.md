@@ -16,9 +16,35 @@
 
 Example:
 ```Clojure
+;; if
 user=> (def x 1230132)
 #'user/x
 
 user=> (str x " is " (if (even? x) "even" "odd")) ;; if, the conditional expression
 "1230132 is even"
+
+;; truth
+user=> (if true :true :false)
+:true
+
+user=> (if [] :true :false)
+:true
+
+user=> (if 0 :true :false)
+:true
+
+user=> (if false :true :false) ;; In Clojure, the only "false" values are false and nil 
+:false
+
+user=> (if nil :true :false) ;; In Clojure, the only "false" values are false and nil 
+:false
+
+;; if and do ;; the only reason to do this is if the bodies have side effects
+user=> (if (even? x)
+  (do (println "even") ;; Use do to create larger blocks that are a single expression.
+      true)
+  (do (println "odd")
+      false))
+even
+true
 ```
