@@ -14,7 +14,10 @@
 
 <hr>
 
-#### 1. dotimes (Do Times)
+#### 1. dotimes (do times)
+
+- Evaluate expression <i>n</i> times
+- Returns nil
 
 ```Clojure
 user=> (dotimes [i 10]
@@ -31,4 +34,9 @@ user=> (dotimes [i 10]
 9
 nil
 ```
+
+<hr>
+
+#### 2. doseq (do sequence)
+
 
