@@ -15,5 +15,40 @@
 Sets are like math sets - unordered and with no duplicates.
 
 ```Clojure
+user=> (def seasons #{"Winter" "Fall" "Spring"})
+#'user/seasons
+
+user=> seasons
+#{"Spring" "Fall" "Winter"}
+
+user=> (def seasons (conj seasons "Summer"))  ;; adding an item to a set
+#'user/seasons
+
+user=> seasons
+#{"Spring" "Fall" "Summer" "Winter"}
+
+user=> (def seasons (conj seasons "Summer" "Hot"))  
+#'user/seasons
+
+user=> seasons
+#{"Spring" "Fall" "Summer" "Hot" "Winter"}
+
+user=> (disj seasons "Hot")  ;; removing an item from a set
+#{"Spring" "Fall" "Summer" "Winter"}
+
+user=> (contains? seasons "Fall")  ;; Checking containment
+true
+
+user=> (into seasons #{"Cold" "Autumn"})    ;; putting another collection into the first one, returning collection of the same type as the first argument
+#{"Cold" "Spring" "Fall" "Summer" "Hot" "Winter" "Autumn"}
+
+user=> (apply sorted-set seasons)    ;; sorted-set
+#{"Fall" "Hot" "Spring" "Summer" "Winter"}
+
+user=> (sorted-set 3 1 2)    ;; sorted-set
+#{1 2 3}
+
+user=> (conj (sorted-set) "Z" "A" "M" "G" "W")    ;; sorted-set
+#{"A" "G" "M" "W" "Z"}
 ```
 
