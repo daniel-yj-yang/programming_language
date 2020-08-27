@@ -28,6 +28,7 @@
 - Functional looping construct: ```loop``` defines bindings, while ```recur``` re-executes loop with new bindings
 - Prefer higher-order library functions instead
 
+Example:
 ```Clojure
 user=> (loop [i 0]
   (if (< i 10)
@@ -42,6 +43,7 @@ user=> (loop [i 0]
 
 - Function arguments are implicit ```loop``` bindings
 
+Example:
 ```Clojure
 user=> (defn increase [i]
   (if (< i 10)
