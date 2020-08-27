@@ -49,7 +49,7 @@ nil
 Example:
 ```Clojure
 user=> (loop [i 0]              ;; first binding the value of 'i' to 0 using the loop statement
-  (if (< i 10)                  ;; then using the if condition clause to see if the value of 'i' < 10
+  (if (< i 10)                  ;; then using the if condition clause to see if the value of 'i' < 10, 
     (do
       (println (str "i = ", i)) ;; return a string
       (recur (inc i)))          ;; then using the recur statement to repeat the loop, after the value of 'i' is incremented by 1
@@ -83,6 +83,19 @@ user=> (defn increase [i]
 
 user=> (increase 5)
 10
+```
+
+<a href="https://forum.freecodecamp.org/t/clojure-guide-how-to-use-loop-and-recur/18418">Example</a>:
+```Clojure
+user=> (defn fact [x]
+  (loop [n x, product 1]                ;; binding n to x, and binding prod to 1.
+    (if (= 1 n)                         ;; this is the base case, the condition to make the loop stop looping, here it says if n = 1, loop stops and returns product
+      product
+      (recur (dec n) (* product n)))))  ;; if n is not 1, the loop recurs. recur restarts the loop with different bindings: n = n - 1, and product = product * n
+#'user/fact
+
+user=> (fact 10)
+3628800
 ```
 
 <hr>
