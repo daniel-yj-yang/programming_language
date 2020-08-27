@@ -18,6 +18,7 @@
 
 ```try```/```catch```/```finally``` as in Java
 
+Example:
 ```Clojure
 user=> (try
   (/ 2 1)
@@ -33,6 +34,7 @@ cleanup
 
 #### 2. Throwing exceptions
 
+Example:
 ```Clojure
 user=> (try
   (throw (Exception. "something went wrong"))
@@ -47,6 +49,7 @@ user=> (try
 - ```ex-info``` takes a message and a map
 - ```ex-data``` gets the map back out, or ```nil``` if not created with ```ex-info```
 
+Example:
 ```Clojure
 user=> (try
   (throw (ex-info "There was a problem" {:detail 42}))
@@ -60,6 +63,7 @@ nil
 
 #### 4. ```with-open```
 
+Example:
 ```Clojure
 user=> (let [f (clojure.java.io/writer "/tmp/new")]
   (try
