@@ -41,3 +41,17 @@ user=> (try
 ```
 
 <hr>
+
+#### 3. Exceptions with Clojure data
+
+- ```ex-info``` takes a message and a map
+- ```ex-data``` gets the map back out, or ```nil``` if not created with ```ex-info```
+
+```Clojure
+user=> (try
+  (throw (ex-info "There was a problem" {:detail 42}))
+  (catch Exception e
+    (prn (:detail (ex-data e)))))
+42
+nil
+```
