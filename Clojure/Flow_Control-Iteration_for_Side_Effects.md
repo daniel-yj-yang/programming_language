@@ -57,3 +57,11 @@ user=> (doseq [n (range 10)]
 9
 nil
 ```
+
+<hr>
+
+#### 3. doseq with multiple bindings
+
+- Similar to nested ```foreach``` loops
+- Processes all permutations of sequence content
+- Returns ```nil```
