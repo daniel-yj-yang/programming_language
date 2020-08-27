@@ -17,7 +17,7 @@
 #### 1. Recursion and Iteration
 
 - Clojure provides recur and the sequence abstraction
-- recur is "classic" recursion, but consumers don’t control it, considered a lower-level facility
+- ```recur``` is "classic" recursion, but consumers don’t control it, considered a lower-level facility
 - Sequences represent iteration as values, and onsumers can partially iterate
 - Reducers represent iteration as function composition
 
