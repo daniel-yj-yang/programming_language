@@ -65,3 +65,22 @@ nil
 - Similar to nested ```foreach``` loops
 - Processes all permutations of sequence content
 - Returns ```nil```
+
+```Clojure
+user=> (doseq [letter [:a :b :c]
+               number (range 4)] ;; list of 0, 1, 2. 3
+         (prn [letter number]))
+[:a 0]
+[:a 1]
+[:a 2]
+[:a 3]
+[:b 0]
+[:b 1]
+[:b 2]
+[:b 3]
+[:c 0]
+[:c 1]
+[:c 2]
+[:c 3]
+nil
+```
