@@ -14,6 +14,7 @@
 
 Sets are like math sets - unordered and with no duplicates.
 
+Example:
 ```Clojure
 user=> (def seasons #{"Winter" "Fall" "Spring"})  ;; or, (def seasons #{"Winter", "Fall", "Spring"}), as comma is treated as whitespace in Clojure
 #'user/seasons
