@@ -54,3 +54,26 @@ user=> (vals temperature) ;; Values, sequential order
 (92 80 88)
 ```
 
+user=> (zipmap ["2020-08-27" "2020-08-26" "2020-08-25"] [88 80 92]) ;; build a map by zipping together two sequences
+{"2020-08-27" 88, "2020-08-26" 80, "2020-08-25" 92}
+
+user=> (into {} (map (fn [player] [player 0]) players)) ;; build a map by using map and into
+{"Alpha" 0, "Charlie" 0, "Bravo" 0, "Sigma" 0}
+
+user=> (reduce (fn [m player] ;; build a map by using reduce
+          (assoc m player 0))
+        {} ; initial value
+        players)
+{"Alpha" 0, "Charlie" 0, "Bravo" 0, "Sigma" 0}
+
+user=> (merge temperature {"2020-08-24" 95 "2020-08-23" 92}) ;; merging maps; if both maps contain the same key, the rightmost one wins.
+{"2020-08-25" 92, "2020-08-26" 80, "2020-08-27" 88, "2020-08-24" 95, "2020-08-23" 92}
+
+;; see also merge-with that resolves conflict in merging maps
+
+user=> (def sm (into (sorted-map) temperature)) ;; Sorted maps
+#'user/sm
+
+user=> sm
+{"2020-08-25" 92, "2020-08-26" 80, "2020-08-27" 88}
+```
