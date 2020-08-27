@@ -47,7 +47,16 @@ user=> (get-in place [:addr :zipcode])
 
 ;; update
 user=> (assoc-in place [:addr :state] "District of Columbia")
+
+;; using records is an alternative way to using maps
+user=> (defrecord Person [first-name last-name age occupation])
+user.Person
+
+user=> (def Trump (->Person "Donald" "Trump" 74 "President"))   
+#'user/Trump
+
+user=> Trump
+#user.Person{:first-name "Donald", :last-name "Trump", :age 74, :occupation "President"}
 ```
 
-<hr>
 
