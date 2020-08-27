@@ -25,6 +25,17 @@
 
 #### 2. loop and recur
 
+- Functional looping construct: ```loop``` defines bindings, while ```recur``` re-executes loop with new bindings
+- Prefer higher-order library functions instead
+
+```Clojure
+user=> (loop [i 0]
+  (if (< i 10)
+    (recur (inc i))
+    i))
+10
+```
+
 <hr>
 
 #### 3. defn and recur
