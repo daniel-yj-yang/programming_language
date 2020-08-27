@@ -80,6 +80,9 @@ user=> (defn increase [i]
     (recur (inc i))
     i))
 #'user/increase
+
+user=> (increase 5)
+10
 ```
 
 <hr>
