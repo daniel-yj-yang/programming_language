@@ -55,3 +55,21 @@ user=> (try
 42
 nil
 ```
+
+<hr>
+
+#### 4. ```with-open```
+
+```Clojure
+user=> (let [f (clojure.java.io/writer "/tmp/new")]
+  (try
+    (.write f "some text")
+    (finally
+      (.close f))))
+nil
+
+;; Can be written:
+user=> (with-open [f (clojure.java.io/writer "/tmp/new")]
+  (.write f "some text"))
+nil
+```
