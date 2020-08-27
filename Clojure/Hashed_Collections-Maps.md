@@ -16,6 +16,7 @@ Two functions:
 
 <hr>
 
+Example:
 ```Clojure
 user=> (def temperature {"2020-08-25" 92 "2020-08-26" 80 "2020-08-27" 88}) ;; Creating a literal map by { and }.
 #'user/temperature
