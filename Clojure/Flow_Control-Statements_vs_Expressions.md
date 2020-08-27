@@ -14,3 +14,6 @@
 
 <hr>
 
+- In Clojure, everything is an expression and everything returns a value.
+- A block of multiple expressions returns the last value.
+- Expressions that exclusively perform side-effects return ```nil```.
