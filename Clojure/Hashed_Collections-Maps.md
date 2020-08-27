@@ -10,6 +10,10 @@
 
 ### Maps
 
+Two functions:
+1. to manage an association of keys to values (namely, dictionaries)
+2. to represent domain application data
+
 <hr>
 
 
