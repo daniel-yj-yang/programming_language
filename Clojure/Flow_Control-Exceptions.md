@@ -14,6 +14,17 @@
 
 <hr>
 
+#### 1. Exception handling
 
+```try```/```catch```/```finally``` as in Java
+
+```Clojure
+(try
+  (/ 2 1)
+  (catch ArithmeticException e
+    "divide by zero")
+  (finally
+    (println "cleanup")))
+```
 
 
