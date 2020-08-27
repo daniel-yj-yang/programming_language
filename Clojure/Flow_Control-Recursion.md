@@ -30,6 +30,23 @@
 
 Example:
 ```Clojure
+user=> (defn Example []
+   (loop [x 10]
+      (when (> x 1)
+         (println x)
+         (recur (- x 2))))) 
+#'user/Example
+user=> (Example)
+10
+8
+6
+4
+2
+nil
+```
+
+Example:
+```Clojure
 user=> (loop [i 0]
   (if (< i 10)
     (recur (inc i))
