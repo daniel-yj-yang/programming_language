@@ -51,9 +51,10 @@ nil
 Example:
 ```Clojure
 user=> (loop [i 0]      ;; first binding the value of 'i' to 0 using the loop statement
-  (if (< i 10)          ;; then using the if condition clause to see if the value of 'i'
+  (if (< i 10)          ;; then using the if condition clause to see if the value of 'i' < 10
+    (str ' i = ' i)     ;; return a string
     (recur (inc i))     ;; then using the recur statement to repeat the loop, after the value of 'i' is incremented by 1
-    i))
+    "i = 10"))          ;; if i is not < 10, return a string 
 10
 ```
 
