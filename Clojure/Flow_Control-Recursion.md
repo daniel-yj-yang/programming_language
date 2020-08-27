@@ -23,7 +23,7 @@
 
 <hr>
 
-#### 2. loop and recur
+#### 2. ```loop``` and ```recur```
 
 - Functional looping construct: ```loop``` defines bindings, while ```recur``` re-executes loop with new bindings
 - Prefer higher-order library functions instead
@@ -38,10 +38,22 @@ user=> (loop [i 0]
 
 <hr>
 
-#### 3. defn and recur
+#### 3. ```defn``` and ```recur```
+
+- Function arguments are implicit ```loop``` bindings
+
+```Clojure
+user=> (defn increase [i]
+  (if (< i 10)
+    (recur (inc i))
+    i))
+#'user/increase
+```
 
 <hr>
 
-#### 4. recur for recursion
+#### 4. ```recur``` for recursion
 
-
+- ```recur``` must be in "tail position", that is, the last expression in a branch
+- ```recur``` must provide values for all bound symbols by position, including: (a) Loop bindings, and (b) defn/fn arguments
+- Recursion via ```recur``` does not consume stack
