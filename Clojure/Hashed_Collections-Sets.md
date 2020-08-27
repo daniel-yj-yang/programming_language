@@ -12,5 +12,8 @@
 
 <hr>
 
+Sets are like math sets - unordered and with no duplicates.
 
+```Clojure
+```
 
