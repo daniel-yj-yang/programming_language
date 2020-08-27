@@ -52,7 +52,6 @@ user=> (keys temperature) ;; Keys, sequential order
 
 user=> (vals temperature) ;; Values, sequential order
 (92 80 88)
-```
 
 user=> (zipmap ["2020-08-27" "2020-08-26" "2020-08-25"] [88 80 92]) ;; build a map by zipping together two sequences
 {"2020-08-27" 88, "2020-08-26" 80, "2020-08-25" 92}
