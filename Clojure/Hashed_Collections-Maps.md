@@ -16,4 +16,26 @@ Two functions:
 
 <hr>
 
+```Clojure
+user=> (def temperature {"2020-08-25" 92 "2020-08-26" 80 "2020-08-27" 88}) ;; Creating a literal map by { and }.
+#'user/temperature
+
+user=> temperature
+{"2020-08-25" 92, "2020-08-26" 80, "2020-08-27" 88}
+
+user=> (assoc temperature "2020-08-20" 100) ;; Adding a new key-value pair, or updating it
+{"2020-08-25" 92, "2020-08-26" 80, "2020-08-27" 88, "2020-08-20" 100}
+
+user=> (dissoc temperature "2020-08-20") ;; Removing a key-value pair
+{"2020-08-25" 92, "2020-08-26" 80, "2020-08-27" 88}
+
+user=> (get temperature "2020-08-27") ;; Looking up by key
+88
+
+user=> (temperature "2020-08-27") ;; Looking up by key
+88
+
+user=> (temperature "2020-08-28")
+nil
+```
 
