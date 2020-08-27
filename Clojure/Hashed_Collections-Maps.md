@@ -37,5 +37,20 @@ user=> (temperature "2020-08-27") ;; Looking up by key
 
 user=> (temperature "2020-08-28")
 nil
+
+user=> (temperature "2020-08-28" 80) ;; Looking up with a default; useful when the key is not found
+80
+
+user=> (contains? temperature "2020-08-27") ;; Checking contains
+true
+
+user=> (find temperature "2020-08-27") ;; Checking contains
+["2020-08-27" 88]
+
+user=> (keys temperature) ;; Keys, sequential order
+("2020-08-25" "2020-08-26" "2020-08-27")
+
+user=> (vals temperature) ;; Values, sequential order
+(92 80 88)
 ```
 
