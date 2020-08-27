@@ -54,6 +54,6 @@ user=> (defn increase [i]
 
 #### 4. ```recur``` for recursion
 
-- ```recur``` must be in "tail position", that is, the last expression in a branch
+- <a href="https://clojuredocs.org/clojure.core/recur">```recur```</a> must be in "tail position", that is, the last expression in a branch
 - ```recur``` must provide values for all bound symbols by position, including: (a) Loop bindings, and (b) defn/fn arguments
 - Recursion via ```recur``` does not consume stack
