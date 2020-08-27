@@ -55,7 +55,8 @@ even
 true
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; when ;; it checks a condition and then evaluates any number of statements as a body (so no do is required). ;; The value of the last expression is returned. If the condition is false, nil is returned.
+;; when ;; it checks a condition and then evaluates any number of statements as a body (so no do is required).
+;; The value of the last expression is returned. If the condition is false, nil is returned.
 
 user=> (when (even? x)
   (throw (RuntimeException. (str "x must be even: " x))))
