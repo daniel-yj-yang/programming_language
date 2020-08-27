@@ -1,2 +1,2 @@
 
-- <a href="./learn">Learn</a> Clojure
+Machine Learning application
