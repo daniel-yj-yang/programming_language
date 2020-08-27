@@ -14,4 +14,21 @@
 
 <hr>
 
+#### 1. dotimes (Do Times)
+
+```Clojure
+user=> (dotimes [i 10]
+         (println i))
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+nil
+```
 
