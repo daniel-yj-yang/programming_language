@@ -28,13 +28,15 @@
 - Functional looping construct: ```loop``` defines bindings, while ```recur``` re-executes loop with new bindings
 - Prefer higher-order library functions instead
 
+In the above example, we are first binding the value of ‘x’ to 10 using the loop statement. We then use the when condition clause to see if the value of ‘x’ is less than 1. We then print the value of ‘x’ to the console and use the recur statement to repeat the loop. The loop is repeated after the value of ‘x’ is decremented by 2.
+
 Example:
 ```Clojure
 user=> (defn Example []
-   (loop [x 10]
-      (when (> x 1)
-         (println x)
-         (recur (- x 2)))))
+   (loop [x 10]               ;; first binding the value of 'x' to 10 using the loop statement
+      (when (> x 1)           ;; then using the when condition clause to see if the value of 'x' < 1
+         (println x)          ;; then printing the value of 'x' to the console
+         (recur (- x 2)))))   ;; finally using the recur statement to repeat the loop, after the value of 'x' is decremented by 2
 #'user/Example
 
 user=> (Example)
