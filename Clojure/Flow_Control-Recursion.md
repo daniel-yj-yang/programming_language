@@ -50,12 +50,23 @@ nil
 
 Example:
 ```Clojure
-user=> (loop [i 0]      ;; first binding the value of 'i' to 0 using the loop statement
-  (if (< i 10)          ;; then using the if condition clause to see if the value of 'i' < 10
-    (str ' i = ' i)     ;; return a string
-    (recur (inc i))     ;; then using the recur statement to repeat the loop, after the value of 'i' is incremented by 1
-    "i = 10"))          ;; if i is not < 10, return a string 
-10
+user=> (loop [i 0]              ;; first binding the value of 'i' to 0 using the loop statement
+  (if (< i 10)                  ;; then using the if condition clause to see if the value of 'i' < 10
+    (do
+      (println (str "i = ", i)) ;; return a string
+      (recur (inc i)))          ;; then using the recur statement to repeat the loop, after the value of 'i' is incremented by 1
+    "i = 10"))                  ;; if i is not < 10, return a string 
+i = 0
+i = 1
+i = 2
+i = 3
+i = 4
+i = 5
+i = 6
+i = 7
+i = 8
+i = 9
+"i = 10"
 ```
 
 <hr>
