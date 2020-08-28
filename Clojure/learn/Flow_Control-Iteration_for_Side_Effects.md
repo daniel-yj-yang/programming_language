@@ -10,7 +10,7 @@
 
 ## <a href="./Flow_Control.md">Flow Control</a>
 
-### Iteration for Side Effects
+### Iteration for <a href="https://www.braveclojure.com/functional-programming/">Side Effects</a>
 
 <hr>
 
