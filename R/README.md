@@ -1,4 +1,5 @@
-R
+# <a href="https://en.wikipedia.org/wiki/R_(programming_language)">R</a>
 
-1. Pipeline that evaluates multiple algorithms
-2. Programming Exercise
+### <a href="./learn">Learn</a>
+### <a href="./ml">Machine Learning applications</a>
+
