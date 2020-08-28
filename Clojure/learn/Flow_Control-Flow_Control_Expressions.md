@@ -80,7 +80,7 @@ user=> (cond
 "x is some value else"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; case, is similar to cond, except that it will throw an exception if no value matches.
+;; case is similar to cond, except that it will throw an exception if no value matches.
 
 user=> (defn foo [x]
 (case x
