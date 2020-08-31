@@ -19,6 +19,7 @@ class Derived_Class_Name(object): # object is a Python base class name
         # Public Data Members
         # The members of a class that are declared public are easily accessible from any part of the program.
         # All data members and member functions of a class are public by default.
+        # https://www.geeksforgeeks.org/access-modifiers-in-python-public-private-and-protected/
         this_instance_known_as_self.variable1 = variable1
         this_instance_known_as_self.variable2 = variable2
         this_instance_known_as_self.variable3 = variable3
