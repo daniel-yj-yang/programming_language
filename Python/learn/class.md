@@ -16,11 +16,25 @@ class Derived_Class_Name(object): # object is a Python base class name
           variable2: description.
           variable3: description.
         """
-        this_instance_known_as_self._variable1 = variable1
-        this_instance_known_as_self._variable2 = variable2
-        this_instance_known_as_self._variable3 = variable3
+        # Public Data Members
+        # The members of a class that are declared public are easily accessible from any part of the program.
+        # All data members and member functions of a class are public by default.
+        this_instance_known_as_self.variable1 = variable1
+        this_instance_known_as_self.variable2 = variable2
+        this_instance_known_as_self.variable3 = variable3
+        
+        # Protected Access Modifier
+        # The members of a class that are declared protected are only accessible to a class derived from it.
+        # Data members of a class are declared protected by adding a single underscore ‘_’ symbol before the data member of that class.
         this_instance_known_as_self._variable4 = {k: None for k in variable1}
         this_instance_known_as_self._variable5 = None
+        
+        # Private Access Modifier
+        # The members of a class that are declared private are accessible within the class only
+        # Private access modifier is the most secure access modifier.
+        # Data members of a class are declared private by adding a double underscore ‘__’ symbol before the data member of that class.
+        this_instance_known_as_self.__variable6 = None
+        this_instance_known_as_self.__variable7 = None
 ```
 
 ```python3
