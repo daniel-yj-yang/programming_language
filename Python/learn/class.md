@@ -23,9 +23,10 @@ class Derived_Class_Name(object): # object is a Python base class name
         this_instance_known_as_self._variable5 = None
 ```
 
+```python3
 Example = Derived_Class_Name([1], 2)
 Example.__dict__
-
+```
 
     @property # https://www.programiz.com/python-programming/property
     def embeddings(self):
