@@ -28,6 +28,7 @@ Example = Derived_Class_Name([1], 2)
 Example.__dict__
 ```
 
+```python3
     @property # https://www.programiz.com/python-programming/property
     def embeddings(self):
         """The embeddings dictionary."""
