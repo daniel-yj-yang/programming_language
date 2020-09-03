@@ -27,12 +27,18 @@ pip install torch torchvision
 
 Check package version.
 
-Method#1: using Python IDE
+Method#1: use Python IDE
 
 ```
 >>> import numpy
 >>> numpy.__version__
-'1.18.5'
+'1.19.1'
 ```
 
+Method#2: use pip
+
+```
+% pip freeze | grep numpy
+numpy==1.19.1
+```
 
