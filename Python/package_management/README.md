@@ -1,4 +1,4 @@
-Use <a href="https://pip.pypa.io/en/stable/">pip</a> 
+Use <a href="https://pip.pypa.io/en/stable/">pip</a> to manage packages.
 
 <hr>
 
