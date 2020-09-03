@@ -14,3 +14,11 @@ For example, a user lib parh in **/Users/\<username\>/.pip/pip.conf**
 [global]
 target = /Users/<username>/Python-library
 ```
+
+<hr>
+
+Installing a package. For example: <a href="https://pytorch.org/">PyTorch</a>
+
+```
+pip install torch torchvision
+```
