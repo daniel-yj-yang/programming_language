@@ -27,7 +27,7 @@ pip install torch torchvision
 
 Check package version.
 
-Method#1: use Python IDE
+Method#1: use Python
 
 ```
 >>> import numpy
