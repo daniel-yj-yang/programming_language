@@ -1,6 +1,10 @@
 
 Examples:
 
+<a href="https://plotly.com/python/ai-ml/">plotly - Machine Learning</a>
+
+<hr>
+
 ```python3
 # Scatterplot
 import plotly.express as px
