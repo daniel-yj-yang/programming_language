@@ -3,7 +3,7 @@
 
 <hr>
 
-Example:
+Examples:
 
 ```python3
 # Scatterplot
