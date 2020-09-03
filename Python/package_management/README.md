@@ -22,3 +22,17 @@ Install a package, for example, <a href="https://pytorch.org/">PyTorch</a>.
 ```
 pip install torch torchvision
 ```
+
+<hr>
+
+Check package version.
+
+Method#1: using Python IDE
+
+```
+>>> import numpy
+>>> numpy.__version__
+'1.18.5'
+```
+
+
