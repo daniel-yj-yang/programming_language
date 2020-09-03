@@ -7,3 +7,9 @@ To see the location of pip.conf on Mac:
 ```
 pip config list -v
 ```
+
+For example, a user lib parh in **/Users/<username>/.pip/pip.conf**
+  
+```
+target = /Users/<username>/Python-library
+```
