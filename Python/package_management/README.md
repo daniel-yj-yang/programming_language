@@ -8,12 +8,16 @@ To see the location of pip.conf on Mac:
 pip config list -v
 ```
 
-For example, a user lib parh in **/Users/\<username\>/.pip/pip.conf**
+For example, to specify a userlib parh in **/Users/\<username\>/.pip/pip.conf**
   
 ```
 [global]
 target = /Users/<username>/Python-library
 ```
+
+Notes:
+- This userlib path needs to be added by $PYTHONPATH so python can load it by default
+- This userlib path needs to be added by PYTHONPATH manager in Spyder
 
 <hr>
 
