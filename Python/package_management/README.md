@@ -29,14 +29,18 @@ pip install torch torchvision
 
 <hr>
 
-Check package version.
+Check module version and module load path
 
 Method#1: use Python
 
 ```
 >>> import numpy
+
 >>> numpy.__version__
 '1.19.1'
+
+>>> numpy.__file__
+'/Users/daniel/Python-library/numpy/__init__.py'
 ```
 
 Method#2: use pip
@@ -44,5 +48,17 @@ Method#2: use pip
 ```
 % pip freeze | grep numpy
 numpy==1.19.1
+
+% pip show numpy
+Name: numpy
+Version: 1.19.1
+Summary: NumPy is the fundamental package for array computing with Python.
+Home-page: https://www.numpy.org
+Author: Travis E. Oliphant et al.
+Author-email: None
+License: BSD
+Location: /Users/daniel/Python-library
+Requires: 
+Required-by: torchvision, torch, yellowbrick, umap-learn, tensorflow, tensorboard, tables, statsmodels, seaborn, scipy, scikit-learn, PyWavelets, patsy, pandas, opt-einsum, numexpr, numba, mkl-random, mkl-fft, matplotlib, Keras-Preprocessing, imageio, h5py, Bottleneck, bokeh, bkcharts, astropy, altair
 ```
 
