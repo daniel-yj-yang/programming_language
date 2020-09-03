@@ -16,7 +16,7 @@ target = /Users/<username>/Python-library
 ```
 
 Notes:
-- This userlib path needs to be added by $PYTHONPATH so python can load it by default
+- This userlib path needs to be added by $PYTHONPATH (e.g., ~/.zshrc) so python can load it by default
 - This userlib path needs to be added by PYTHONPATH manager in Spyder
 
 <hr>
