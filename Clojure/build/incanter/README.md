@@ -24,7 +24,7 @@ user=> (view (function-plot pdf-normal -5 5))
 
 <hr>
 
-Reference of incanter <a href="https://incanter.github.io/incanter/stats-api.html">functions</a>
+References of incanter <a href="https://incanter.github.io/incanter/stats-api.html">functions</a>
 
 CDF | PDF | sample | distance 
 --- | --- | --- | ---
