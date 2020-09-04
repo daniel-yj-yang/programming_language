@@ -20,7 +20,7 @@ user=> (view (function-plot pdf-normal -5 5))
 
 <hr>
 
-#### Hyperbolic tangent
+#### Hyperbolic tangent PDF
 
 ```Clojure
 user=> (defn tanh [x] (/ (- (exp x) (exp (* -1 x))) (+ (exp x) (exp (* -1 x)))))
