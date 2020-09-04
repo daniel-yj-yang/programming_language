@@ -1,4 +1,5 @@
 
 - <a href="./learn">Learn</a> Clojure
-- <a href="./lein">Use leiningen</a>
+- Use <a href="./lein">leiningen</a>
+- <a href="./use">Use</a> Clojure
 - <a href="./build">Build applications</a> using Clojure
