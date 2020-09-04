@@ -1,5 +1,5 @@
 
-Build applications using Clojure
+Build applications with Clojure
 
 <hr>
 
