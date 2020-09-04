@@ -29,4 +29,4 @@ user=> (defn tanh [x] (/ (- (exp x) (exp (* -1 x))) (+ (exp x) (exp (* -1 x)))))
 user=> (view (function-plot tanh -5 5))
 ```
 
-<img src="./images/tanh_pdf_1.png">
+<img src="./images/tanh_1.png">
