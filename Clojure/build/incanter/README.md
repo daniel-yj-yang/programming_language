@@ -1,0 +1,3 @@
+- <a href="http://incanter.org/docs/incanter-cheat-sheet.pdf">cheat sheet</a> (<a href="./incanter/incanter-cheat-sheet.pdf">local save</a>)
+- http://incanter.github.io/incanter/index.html
+- https://github.com/incanter/incanter/wiki
