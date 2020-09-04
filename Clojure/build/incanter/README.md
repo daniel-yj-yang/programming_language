@@ -2,6 +2,22 @@
 - http://incanter.github.io/incanter/index.html
 - https://github.com/incanter/incanter/wiki
 
+<hr>
+
+### Use incanter
+
+##### 1. specify $INCANTER_HOME in the shell configuration file
+
+##### 2. cd $INCANTER_HOME and script/repl
+
+##### 3. load library
+
+```Clojure
+(use '(incanter core stats charts datasets))
+```
+
+<hr>
+
 ### Examples:
 
 #### Normal distribution PDF
