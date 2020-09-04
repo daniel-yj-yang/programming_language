@@ -6,7 +6,7 @@
 
 #### Normal distribution PDF
 
-##### using <a href="https://incanter.github.io/incanter/stats-api.html">sample-normal</a>
+##### 1. using <a href="https://incanter.github.io/incanter/stats-api.html">sample-normal</a>
 
 ```Clojure
 user=> (view (histogram (sample-normal 10000000 :mean 0 :sd 1) :nbins 1000 :density true :x-label "Normal Distribution PDF"))
@@ -15,7 +15,7 @@ user=> (view (histogram (sample-normal 10000000 :mean 0 :sd 1) :nbins 1000 :dens
 
 <hr>
 
-##### using <a href="https://incanter.github.io/incanter/stats-api.html">pdf-normal</a>
+##### 2. using <a href="https://incanter.github.io/incanter/stats-api.html">pdf-normal</a>
 
 ```Clojure
 user=> (view (function-plot pdf-normal -5 5))
