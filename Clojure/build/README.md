@@ -1,5 +1,5 @@
 
-Machine Learning applications using Clojure
+Build applications using Clojure
 
 <hr>
 
