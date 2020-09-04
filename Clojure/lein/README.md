@@ -3,6 +3,8 @@ lein: https://leiningen.org/
 <hr>
 
 Usage:
-```lein
-lein new app clojure-noob
+
+1. "new" - Generate project scaffolding based on a template.
+```
+lein new app clojure-app
 ```
