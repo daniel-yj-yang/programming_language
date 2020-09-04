@@ -8,4 +8,4 @@ Normal distribution PDF
 ```Clojure
 user=> (view (histogram (sample-normal 10000000 :mean 0 :sd 1) :nbins 1000 :density true :x-label "Normal Distribution PDF"))
 ```
-<img src="./images/normal_distribution1.png">
+<img src="./images/normal_distribution_1.png">
