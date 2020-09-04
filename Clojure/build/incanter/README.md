@@ -95,6 +95,8 @@ user=> (mmult B A)
 -0.0000 -0.0000 1.0000]
 ```
 
+<hr>
+
 #### Statistics
 
 ##### <a herf="https://github.com/incanter/incanter/wiki/Statistics-Examples">PCA</a>
