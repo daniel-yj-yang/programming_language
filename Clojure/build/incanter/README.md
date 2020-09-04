@@ -42,3 +42,22 @@ user=> (view (function-plot tanh -5 5))
 ```
 
 <img src="./images/tanh_1.png">
+
+<hr>
+
+#### <a href="https://github.com/incanter/incanter/wiki/Matrices">Matrix operation</a>
+
+```Clojure
+user=> (def A (matrix (sample-uniform 9) 3))
+#'user/A
+
+user=> A
+[0.6199 0.0557 0.1063
+0.0956 0.6555 0.8251
+0.5847 0.2950 0.2554]
+
+user=> (solve A)
+[ 1.2803 -0.2888  0.4001
+-7.7202 -1.6218  8.4506
+ 5.9848  2.5339 -6.7598]
+```
