@@ -47,6 +47,8 @@ user=> (view (function-plot tanh -5 5))
 
 #### <a href="https://github.com/incanter/incanter/wiki/Matrices">Matrix operation</a>
 
+##### Inverse of a matrix
+
 ```Clojure
 user=> (def A (matrix (sample-uniform 9) 3))
 #'user/A
