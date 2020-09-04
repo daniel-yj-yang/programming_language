@@ -8,6 +8,12 @@ A computing and graphics API environment for the JVM
 
 <hr>
 
+## Machine learning
+
+- https://dragan.rocks/articles/19/Deep-Learning-in-Clojure-From-Scratch-to-GPU-0-Why-Bother
+
+<hr>
+
 ## References
 
 - <a href="https://www.braveclojure.com/getting-started/">Create an executable JAR file</a>
