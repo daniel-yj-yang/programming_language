@@ -6,4 +6,4 @@ Machine Learning applications using Clojure
 ## Reference
 
 - <a href="https://www.braveclojure.com/getting-started/">Create an executable JAR file</a>
-- <a href="http://incanter.github.io/incanter/index.html">Incanter</a>, a R-like statistical computing and graphics environment for the JVM.
+- <a href="http://incanter.github.io/incanter/index.html">Incanter</a>, a computing and graphics API environment for the JVM.
