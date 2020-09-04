@@ -3,7 +3,8 @@ Build applications using Clojure
 
 <hr>
 
-## Incanter - A computing and graphics API environment for the JVM
+## Incanter
+A computing and graphics API environment for the JVM
 
 - <a href="http://incanter.org/docs/incanter-cheat-sheet.pdf">cheat sheet</a> (<a href="./incanter/incanter-cheat-sheet.pdf">local save</a>)
 - http://incanter.github.io/incanter/index.html
