@@ -92,3 +92,35 @@ user=> (mmult B A)
  0.0000  1.0000 0.0000
 -0.0000 -0.0000 1.0000]
 ```
+
+#### Statistics
+
+##### PCA
+
+```Clojure
+user=> (def iris (to-matrix (get-dataset :iris)))
+#'user/iris
+
+user=> (def pca (principal-components (sel iris :cols (range 4))))
+#'user/pca
+
+user=> (def pc1 (sel (:rotation pca) :cols 0))
+#'user/pc1
+
+user=> (def pc2 (sel (:rotation pca) :cols 1))
+#'user/pc2
+
+user=> (def x1 (mmult (sel iris :cols (range 4)) pc1)) 
+#'user/x1
+
+user=> (def x2 (mmult (sel iris :cols (range 4)) pc2))
+#'user/x2
+
+user=> (doto (scatter-plot (sel x1 :rows (range 50)) (sel x2 :rows (range 50))
+                    :x-label "PC1" :y-label "PC2" :title "Iris PCA")
+      (add-points (sel x1 :rows (range 50 100)) (sel x2 :rows (range 50 100)))
+      (add-points (sel x1 :rows (range 100 150)) (sel x2 :rows (range 100 150)))
+      view)
+```
+
+<img src="./images/PCA.png">
