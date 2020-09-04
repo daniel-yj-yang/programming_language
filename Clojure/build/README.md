@@ -3,7 +3,10 @@ Build applications using Clojure
 
 <hr>
 
-Incanter (<a href="http://incanter.org/docs/incanter-cheat-sheet.pdf">cheat sheet</a>; <a href="./incanter/incanter-cheat-sheet.pdf">local save</a>)
+## Incanter 
+
+- <a href="http://incanter.org/docs/incanter-cheat-sheet.pdf">cheat sheet</a> (<a href="./incanter/incanter-cheat-sheet.pdf">local save</a>)
+- https://github.com/incanter/incanter/wiki
 
 <hr>
 
