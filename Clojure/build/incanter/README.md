@@ -95,7 +95,7 @@ user=> (mmult B A)
 
 #### Statistics
 
-##### PCA
+##### <a herf="https://github.com/incanter/incanter/wiki/Statistics-Examples">PCA</a>
 
 ```Clojure
 user=> (def iris (to-matrix (get-dataset :iris)))
