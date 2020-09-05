@@ -111,10 +111,11 @@ user=> (dim iris)
 user=> (def X (sel iris :cols (range 0 4)))  ;; the last column is the class (0,1,2). not using it
 #'user/X
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; to calculate PCA by hand, see this: https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/
 user=> (def nrows ((dim X) 0))
 #'user/nrows
 
-;; to calculate PCA by hand, see this: https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/
 user=> (def colmeans (div (map sum (trans X)) nrows))
 #'user/colmeans
 
@@ -139,19 +140,34 @@ user=> V
 user=> (def Eigenvalues (:values (decomp-eigenvalue V)))
 #'user/Eigenvalues
 
+;; Eigenvalues are variances
+;; the highest eigenvalue is 4.23, the 4th value, followed by 0.24, the 3rd value
 user=> Eigenvalues
 (0.02383509297344985 0.07820950004291968 0.24267074792863366 4.228241706034862)
 
 user=> (def Eigenvectors (:vectors (decomp-eigenvalue V)))
 #'user/Eigenvectors
 
+;; based on the descending order of eigenvalues, the 4th col is PC1, the 3rd col is PC2, and so on ...
+;; that is, PC1 = [0.3614 -0.0845 0.8567 0.3583]
 user=> Eigenvectors
 [-0.3155 -0.5820 -0.6566  0.3614
  0.3197  0.5979 -0.7302 -0.0845
  0.4798  0.0762  0.1734  0.8567
 -0.7537  0.5458  0.0755  0.3583]
-;; stop here for calculating by hand -- not sure if I missed anything...
 
+;; this is equivalent to R's prcomp(center = T, scale. = F)
+;; PC1
+user=> (sel Eigenvectors :cols 3) 
+[ 0.3614
+-0.0845
+ 0.8567
+ 0.3583]
+ 
+;; stop here for calculating by hand -- not sure if I missed anything...
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 
+;; this is equivalent to R's prcomp(center = T, scale. = T)
 user=> (def pc (principal-components X)) 
 #'user/pc
 
