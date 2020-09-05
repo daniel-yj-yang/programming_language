@@ -124,7 +124,7 @@ user=> (def X (sel standardized_data :cols (range 0 4)))  ;; column #5 is the cl
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; to calculate PCA by hand, see this: https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/
-user=> (def nrows ((dim X) 0))
+user=> (def nrows (get (dim X) 0))
 #'user/nrows
 
 user=> (def colmeans (div (map sum (trans X)) nrows))
