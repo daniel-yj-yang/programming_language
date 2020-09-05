@@ -177,8 +177,6 @@ user=> (sel Eigenvectors :cols 3)
  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; user=> (def X_standardized (sel standardized_data :cols (range 5 9)))
-
 ;; this is equivalent to R's prcomp(center = T, scale. = T)
 user=> (def pc (principal-components X)) 
 #'user/pc
