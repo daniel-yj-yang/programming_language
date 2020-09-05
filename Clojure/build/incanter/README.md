@@ -175,7 +175,6 @@ user=> (sel Eigenvectors :cols 3)
  0.8567
  0.3583]
  
-;; stop here for calculating by hand -- not sure if I missed anything...
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; user=> (def X_standardized (sel standardized_data :cols (range 5 9)))
