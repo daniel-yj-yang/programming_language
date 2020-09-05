@@ -108,7 +108,18 @@ user=> (def iris (to-matrix (get-dataset :iris)))
 user=> (dim iris)
 [150 5]
 
-user=> (def X (sel iris :cols (range 0 4)))  ;; the last column is the class (0,1,2). not using it
+;; standardize speed and dist and append the standardized variables to the original dataset
+user=> (def standardized_data (to-matrix (with-data (get-dataset :iris)
+                                    (conj-cols $data
+                                               (sweep (sweep ($ :Sepal.Length)) :stat sd :fun div)
+                                               (sweep (sweep ($ :Sepal.Width))  :stat sd :fun div)
+                                               (sweep (sweep ($ :Petal.Length)) :stat sd :fun div)
+                                               (sweep (sweep ($ :Petal.Width))  :stat sd :fun div)))))
+#'user/standardized_data
+
+;; to see the same results in the hand-crafted results as the function of principal-components, use the range(5 9) version
+;;user=> (def X (sel standardized_data :cols (range 5 9)))  ;; column #5 is the class (0,1,2). not using it
+user=> (def X (sel standardized_data :cols (range 0 4)))  ;; column #5 is the class (0,1,2). not using it
 #'user/X
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -166,7 +177,7 @@ user=> (sel Eigenvectors :cols 3)
  
 ;; stop here for calculating by hand -- not sure if I missed anything...
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- 
+
 ;; this is equivalent to R's prcomp(center = T, scale. = T)
 user=> (def pc (principal-components X)) 
 #'user/pc
@@ -212,12 +223,16 @@ user=> (def pc1 (sel R :cols 0))
 user=> (def pc2 (sel R :cols 1))
 #'user/pc2
 
+;; this is to make the plot (x1, x2) on a standardized scale only. it does not change the results of the function of principal-components when using unstandardized X
+user=> (def X_standardized (sel standardized_data :cols (range 5 9)))
+#'user/X_standardized
+
 ;; see Dimensionality reduction in https://en.wikipedia.org/wiki/Principal_component_analysis 
 ;; the transformation T = X R maps a data vector x(i) from an original space of p variables to a new space of p variables which are uncorrelated over the dataset.
-user=> (def x1 (mmult X pc1)) 
+user=> (def x1 (mmult X_standardized pc1))  ;; X should be standardized first
 #'user/x1
 
-user=> (def x2 (mmult X pc2))
+user=> (def x2 (mmult X_standardized pc2))  ;; X should be standardized first
 #'user/x2
 
 user=> (doto (scatter-plot (sel x1 :rows (range 0 50)) (sel x2 :rows (range 0 50))
