@@ -1,5 +1,5 @@
 
-Build applications with Clojure
+Build ML applications with Clojure
 
 <hr>
 
