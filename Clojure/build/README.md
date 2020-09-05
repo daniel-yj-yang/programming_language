@@ -3,8 +3,9 @@ Build ML applications with Clojure
 
 <hr>
 
-## <a href="./incanter">Incanter</a>
-A computing and graphics API environment for the JVM
+## <a href="https://github.com/incanter/incanter/wiki">Incanter</a>
+- A computing and graphics API environment for the JVM
+- Example <a href="./incanter">use</a> of incanter
 
 <hr>
 
