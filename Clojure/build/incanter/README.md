@@ -171,13 +171,13 @@ user=> (def L (diag Eigenvalues)) ;; the uppercase greek letter of lambda (Λ)
 user=> (def W Eigenvectors)
 #'user/W
 
-user=> (mmult (mmult W L) (trans W)) ;; Importantly, Q = WΛW'
+user=> (mmult (mmult W L) (trans W)) ;; Interestingly, Q = WΛW'
 [ 0.6857 -0.0424  1.2743  0.5163
 -0.0424  0.1900 -0.3297 -0.1216
  1.2743 -0.3297  3.1163  1.2956
  0.5163 -0.1216  1.2956  0.5810]
  
-user=> (mmult (mmult (trans W) Q) W) ;; Importantly, W'QW = Λ
+user=> (mmult (mmult (trans W) Q) W) ;; Interestingly, Λ = W'QW
 [0.0238 -0.0000 -0.0000 0.0000
 0.0000  0.0782 -0.0000 0.0000
 0.0000 -0.0000  0.2427 0.0000
