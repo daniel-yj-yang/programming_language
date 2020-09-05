@@ -159,7 +159,7 @@ user=> Eigenvalues
 user=> (def Eigenvectors (:vectors (decomp-eigenvalue Q)))
 #'user/Eigenvectors
 
-user=> (def L (diag Eigenvalues)) ;; the uppercase of lambda
+user=> (def L (diag Eigenvalues)) ;; the uppercase greek letter of lambda
 #'user/L
 
 user=> (def W Eigenvectors)
@@ -170,6 +170,12 @@ user=> (mmult (mmult W L) (trans W)) ;; Importantly, Q = W.dot(L).dot(W.T)
 -0.0424  0.1900 -0.3297 -0.1216
  1.2743 -0.3297  3.1163  1.2956
  0.5163 -0.1216  1.2956  0.5810]
+ 
+user=> (mmult (mmult (trans W) Q) W) ;; Importantly, W.T.dot(Q).dot(W) = L
+[0.0238 -0.0000 -0.0000 0.0000
+0.0000  0.0782 -0.0000 0.0000
+0.0000 -0.0000  0.2427 0.0000
+0.0000  0.0000  0.0000 4.2282]
 
 ;; based on the descending order of eigenvalues, the 4th col is PC1, the 3rd col is PC2, and so on ...
 ;; that is, PC1 = [0.3614 -0.0845 0.8567 0.3583]
