@@ -105,8 +105,24 @@ user=> (mmult B A)
 user=> (def iris (to-matrix (get-dataset :iris)))
 #'user/iris
 
-user=> (def pca (principal-components (sel iris :cols (range 4))))
+user=> (dim iris)
+[150 5]
+
+user=> (def pca (principal-components (sel iris :cols (range 4)))) ;; the last column is the class (0,1,2). not using it
 #'user/pca
+
+user=> pca
+{:std-dev (1.7083611493276223 0.9560494084868573 0.38308860015839086 0.14392649661761264), :rotation [-0.5211 -0.3774  0.7196  0.2613
+ 0.2693 -0.9233 -0.2444 -0.1235
+-0.5804 -0.0245 -0.1421 -0.8014
+-0.5649 -0.0669 -0.6343  0.5236]
+}
+
+user=> (:rotation pca)  ;; the rotation matrix, 4 x 4
+[-0.5211 -0.3774  0.7196  0.2613
+ 0.2693 -0.9233 -0.2444 -0.1235
+-0.5804 -0.0245 -0.1421 -0.8014
+-0.5649 -0.0669 -0.6343  0.5236]
 
 user=> (def pc1 (sel (:rotation pca) :cols 0))
 #'user/pc1
@@ -120,7 +136,7 @@ user=> (def x1 (mmult (sel iris :cols (range 4)) pc1))
 user=> (def x2 (mmult (sel iris :cols (range 4)) pc2))
 #'user/x2
 
-user=> (doto (scatter-plot (sel x1 :rows (range 50)) (sel x2 :rows (range 50))
+user=> (doto (scatter-plot (sel x1 :rows (range 0 50)) (sel x2 :rows (range 0 50))
                     :x-label "PC1" :y-label "PC2" :title "Iris PCA")
       (add-points (sel x1 :rows (range 50 100)) (sel x2 :rows (range 50 100)))
       (add-points (sel x1 :rows (range 100 150)) (sel x2 :rows (range 100 150)))
