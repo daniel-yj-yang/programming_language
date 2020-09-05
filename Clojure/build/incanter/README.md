@@ -111,6 +111,21 @@ user=> (dim iris)
 user=> (def X (sel iris :cols (range 0 4)))  ;; the last column is the class (0,1,2). not using it
 #'user/X
 
+user=> (correlation X)
+[ 1.0000 -0.1176  0.8718  0.8179
+-0.1176  1.0000 -0.4284 -0.3661
+ 0.8718 -0.4284  1.0000  0.9629
+ 0.8179 -0.3661  0.9629  1.0000]
+
+;; https://towardsdatascience.com/pca-eigenvectors-and-eigenvalues-1f968bc6777a
+;; if further sorting the Eigenvalues in descending order, we can get at the principal components
+user=> (decomp-eigenvalue (mmult (trans (correlation X)) (correlation X)))
+{:values (4.291044482653171E-4 0.02153758052745458 0.835451702772142 8.517629505102025), :vectors [-0.2613 -0.7196 0.3774  0.5211
+ 0.1235  0.2444 0.9233 -0.2693
+ 0.8014  0.1421 0.0245  0.5804
+-0.5236  0.6343 0.0669  0.5649]
+}
+
 user=> (def pc (principal-components X)) 
 #'user/pc
 
