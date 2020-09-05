@@ -148,6 +148,12 @@ user=> Q
  1.2743 -0.3297  3.1163  1.2956
  0.5163 -0.1216  1.2956  0.5810]
 
+user=> (div (mmult (trans C) C) (- nrows 1)) # Covariance matrix crafted by hand, Q = X.T.dot(X) / (n-1)
+[ 0.6857 -0.0424  1.2743  0.5163
+-0.0424  0.1900 -0.3297 -0.1216
+ 1.2743 -0.3297  3.1163  1.2956
+ 0.5163 -0.1216  1.2956  0.5810]
+
 user=> (def Eigenvalues (:values (decomp-eigenvalue Q)))
 #'user/Eigenvalues
 
