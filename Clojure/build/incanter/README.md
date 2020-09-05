@@ -242,4 +242,4 @@ user=> (doto (scatter-plot (sel x1 :rows (range 0 50)) (sel x2 :rows (range 0 50
       view)
 ```
 
-<img src="./images/PCA.png">
+<img src="./images/pca_standardized.png">
