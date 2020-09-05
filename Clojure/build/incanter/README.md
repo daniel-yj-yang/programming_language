@@ -108,10 +108,10 @@ user=> (def iris (to-matrix (get-dataset :iris)))
 user=> (dim iris)
 [150 5]
 
-user=> (def X (sel iris :cols (range 0 4)))
+user=> (def X (sel iris :cols (range 0 4)))  ;; the last column is the class (0,1,2). not using it
 #'user/X
 
-user=> (def pca (principal-components X)) ;; the last column is the class (0,1,2). not using it
+user=> (def pca (principal-components X)) 
 #'user/pca
 
 user=> pca
@@ -154,6 +154,8 @@ user=> (def pc1 (sel R :cols 0))
 user=> (def pc2 (sel R :cols 1))
 #'user/pc2
 
+;; see Dimensionality reduction in https://en.wikipedia.org/wiki/Principal_component_analysis 
+;; the transformation T = X R maps a data vector x(i) from an original space of p variables to a new space of p variables which are uncorrelated over the dataset.
 user=> (def x1 (mmult X pc1)) 
 #'user/x1
 
