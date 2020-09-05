@@ -111,10 +111,10 @@ user=> (dim iris)
 user=> (def X (sel iris :cols (range 0 4)))  ;; the last column is the class (0,1,2). not using it
 #'user/X
 
-user=> (def pca (principal-components X)) 
-#'user/pca
+user=> (def pc (principal-components X)) 
+#'user/pc
 
-user=> pca
+user=> pc
 {:std-dev (1.7083611493276223 0.9560494084868573 0.38308860015839086 0.14392649661761264), :rotation [-0.5211 -0.3774  0.7196  0.2613
  0.2693 -0.9233 -0.2444 -0.1235
 -0.5804 -0.0245 -0.1421 -0.8014
