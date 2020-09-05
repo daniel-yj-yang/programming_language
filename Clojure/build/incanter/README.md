@@ -139,16 +139,16 @@ user=> (def colmeans_matrix (mmult (matrix 1 nrows 1) (trans colmeans)))
 user=> (def C (minus X colmeans_matrix))   
 #'user/C
 
-user=> (def V (covariance C))
-#'user/V
+user=> (def Q (covariance C))
+#'user/Q
 
-user=> V
+user=> Q
 [ 0.6857 -0.0424  1.2743  0.5163
 -0.0424  0.1900 -0.3297 -0.1216
  1.2743 -0.3297  3.1163  1.2956
  0.5163 -0.1216  1.2956  0.5810]
 
-user=> (def Eigenvalues (:values (decomp-eigenvalue V)))
+user=> (def Eigenvalues (:values (decomp-eigenvalue Q)))
 #'user/Eigenvalues
 
 ;; Eigenvalues are variances
@@ -156,8 +156,20 @@ user=> (def Eigenvalues (:values (decomp-eigenvalue V)))
 user=> Eigenvalues
 (0.02383509297344985 0.07820950004291968 0.24267074792863366 4.228241706034862)
 
-user=> (def Eigenvectors (:vectors (decomp-eigenvalue V)))
+user=> (def Eigenvectors (:vectors (decomp-eigenvalue Q)))
 #'user/Eigenvectors
+
+user=> (def L (diag Eigenvalues)) ;; the uppercase of lambda
+#'user/L
+
+user=> (def W Eigenvectors)
+#'user/W
+
+user=> (mmult (mmult W L) (trans W)) ;; Importantly, Q = W.dot(L).dot(W.T)
+[ 0.6857 -0.0424  1.2743  0.5163
+-0.0424  0.1900 -0.3297 -0.1216
+ 1.2743 -0.3297  3.1163  1.2956
+ 0.5163 -0.1216  1.2956  0.5810]
 
 ;; based on the descending order of eigenvalues, the 4th col is PC1, the 3rd col is PC2, and so on ...
 ;; that is, PC1 = [0.3614 -0.0845 0.8567 0.3583]
