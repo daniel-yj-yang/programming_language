@@ -122,7 +122,7 @@ user=> pc
 }
 
 ;; R is a p-by-p matrix of weights whose columns are the eigenvectors of X.T.dot(X). 
-user=> (def R (:rotation pca))
+user=> (def R (:rotation pc))
 #'user/R
 
 user=> R  ;; the rotation matrix, 4 x 4
