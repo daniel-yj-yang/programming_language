@@ -148,7 +148,7 @@ user=> Q
  1.2743 -0.3297  3.1163  1.2956
  0.5163 -0.1216  1.2956  0.5810]
 
-user=> (div (mmult (trans C) C) (- nrows 1)) # Covariance matrix crafted by hand, Q = X.T.dot(X) / (n-1)
+user=> (div (mmult (trans C) C) (- nrows 1)) # Covariance matrix crafted by hand, Q = X'X / (n-1)
 [ 0.6857 -0.0424  1.2743  0.5163
 -0.0424  0.1900 -0.3297 -0.1216
  1.2743 -0.3297  3.1163  1.2956
@@ -171,13 +171,13 @@ user=> (def L (diag Eigenvalues)) ;; the uppercase greek letter of lambda
 user=> (def W Eigenvectors)
 #'user/W
 
-user=> (mmult (mmult W L) (trans W)) ;; Importantly, Q = W.dot(L).dot(W.T)
+user=> (mmult (mmult W L) (trans W)) ;; Importantly, Q = WLW'
 [ 0.6857 -0.0424  1.2743  0.5163
 -0.0424  0.1900 -0.3297 -0.1216
  1.2743 -0.3297  3.1163  1.2956
  0.5163 -0.1216  1.2956  0.5810]
  
-user=> (mmult (mmult (trans W) Q) W) ;; Importantly, W.T.dot(Q).dot(W) = L
+user=> (mmult (mmult (trans W) Q) W) ;; Importantly, W'QW = L
 [0.0238 -0.0000 -0.0000 0.0000
 0.0000  0.0782 -0.0000 0.0000
 0.0000 -0.0000  0.2427 0.0000
@@ -212,7 +212,7 @@ user=> pc
 -0.5649 -0.0669 -0.6343  0.5236]
 }
 
-;; R is a p-by-p matrix of weights whose columns are the eigenvectors of X.T.dot(X). 
+;; R is a p-by-p matrix of weights whose columns are the eigenvectors of X'X 
 user=> (def R (:rotation pc))
 #'user/R
 
@@ -234,7 +234,7 @@ user=> (trans R) ;; the rotation matrix is orthonormal, as (solve R) = (trans R)
  0.7196 -0.2444 -0.1421 -0.6343
  0.2613 -0.1235 -0.8014  0.5236]
 
-user=> (mmult (trans R) R) ;; the rotation matrix is orthonormal, as R.T.dot(R) = I
+user=> (mmult (trans R) R) ;; the rotation matrix is orthonormal, as R'R = I
 [ 1.0000 -0.0000 -0.0000 -0.0000
 -0.0000  1.0000 -0.0000 -0.0000
 -0.0000 -0.0000  1.0000  0.0000
