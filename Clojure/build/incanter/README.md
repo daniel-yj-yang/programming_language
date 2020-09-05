@@ -111,20 +111,46 @@ user=> (dim iris)
 user=> (def X (sel iris :cols (range 0 4)))  ;; the last column is the class (0,1,2). not using it
 #'user/X
 
-user=> (correlation X)
-[ 1.0000 -0.1176  0.8718  0.8179
--0.1176  1.0000 -0.4284 -0.3661
- 0.8718 -0.4284  1.0000  0.9629
- 0.8179 -0.3661  0.9629  1.0000]
+user=> (def nrows ((dim X) 0))
+#'user/nrows
 
-;; https://towardsdatascience.com/pca-eigenvectors-and-eigenvalues-1f968bc6777a
-;; if further sorting the Eigenvalues in descending order, we can get at the principal components
-user=> (decomp-eigenvalue (mmult (trans (correlation X)) (correlation X)))
-{:values (4.291044482653171E-4 0.02153758052745458 0.835451702772142 8.517629505102025), :vectors [-0.2613 -0.7196 0.3774  0.5211
- 0.1235  0.2444 0.9233 -0.2693
- 0.8014  0.1421 0.0245  0.5804
--0.5236  0.6343 0.0669  0.5649]
-}
+;; to calculate PCA by hand, see this: https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/
+user=> (def colmeans (div (map sum (trans X)) nrows))
+#'user/colmeans
+
+user=> colmeans
+(5.843333333333335 3.057333333333334 3.7580000000000027 1.199333333333334)
+
+user=> (def colmeans_matrix (mmult (matrix 1 nrows 1) (trans colmeans)))
+#'user/colmeans_matrix
+
+user=> (def C (minus X colmeans_matrix))   
+#'user/C
+
+user=> (def V (covariance C))
+#'user/V
+
+user=> V
+[ 0.6857 -0.0424  1.2743  0.5163
+-0.0424  0.1900 -0.3297 -0.1216
+ 1.2743 -0.3297  3.1163  1.2956
+ 0.5163 -0.1216  1.2956  0.5810]
+
+user=> (def Eigenvalues (:values (decomp-eigenvalue V)))
+#'user/Eigenvalues
+
+user=> Eigenvalues
+(0.02383509297344985 0.07820950004291968 0.24267074792863366 4.228241706034862)
+
+user=> (def Eigenvectors (:vectors (decomp-eigenvalue V)))
+#'user/Eigenvectors
+
+user=> Eigenvectors
+[-0.3155 -0.5820 -0.6566  0.3614
+ 0.3197  0.5979 -0.7302 -0.0845
+ 0.4798  0.0762  0.1734  0.8567
+-0.7537  0.5458  0.0755  0.3583]
+;; stop here for calculating by hand -- not sure if I missed anything...
 
 user=> (def pc (principal-components X)) 
 #'user/pc
