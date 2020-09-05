@@ -121,6 +121,7 @@ user=> pca
 -0.5649 -0.0669 -0.6343  0.5236]
 }
 
+;; R is a p-by-p matrix of weights whose columns are the eigenvectors of X.T.dot(X). 
 user=> (def R (:rotation pca))
 #'user/R
 
