@@ -171,7 +171,7 @@ user=> (def L (diag Eigenvalues)) ;; the uppercase greek letter of lambda (Λ)
 user=> (def W Eigenvectors)
 #'user/W
 
-user=> (mmult W (trans W)) ;; Importantly, WW' = I as W is orthonormal
+user=> (mmult W (trans W)) ;; Importantly, WW' = W'W = I as W is orthonormal
 [1.0000  0.0000  0.0000  0.0000
 0.0000  1.0000 -0.0000 -0.0000
 0.0000 -0.0000  1.0000  0.0000
