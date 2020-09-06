@@ -268,7 +268,7 @@ user=> (def v1 (sel R :cols 0))  ;; the eigenvector corresponding to the 1st eig
 user=> (def v2 (sel R :cols 1))  ;; the eigenvector corresponding to the 2nd eigenvalue
 #'user/v2
 
-;; this is to make the plot (x1, x2) on a standardized scale only. it does not change the results of the function of principal-components when using unstandardized X
+;; this is to make the plot (pc1, pc2) on a standardized scale only. it does not change the results of the function of principal-components when using unstandardized X
 user=> (def X_standardized (sel standardized_data :cols (range 5 9)))
 #'user/X_standardized
 
