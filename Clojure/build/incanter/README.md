@@ -280,6 +280,12 @@ user=> (def pc1 (mmult X_standardized v1))  ;; X should be standardized first
 user=> (def pc2 (mmult X_standardized v2))  ;; X should be standardized first
 #'user/pc2
 
+user=> (nth eigenvalues 0)
+2.9184978165319944
+
+user=> (variance pc1) ;; Var(PC_k) = lambda_k
+2.9184978165319966
+
 user=> (doto (scatter-plot (sel pc1 :rows (range 0 50)) (sel pc2 :rows (range 0 50))
                     :x-label "PC1" :y-label "PC2" :title "Iris PCA")
       (add-points (sel pc1 :rows (range 50 100)) (sel pc2 :rows (range 50 100)))
