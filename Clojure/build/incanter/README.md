@@ -262,11 +262,11 @@ user=> (mmult (trans R) R) ;; the rotation matrix is orthonormal, as R'R = I
 -0.0000 -0.0000  1.0000  0.0000
 -0.0000 -0.0000  0.0000  1.0000]
 
-user=> (def pc1 (sel R :cols 0))
-#'user/pc1
+user=> (def v1 (sel R :cols 0))  ;; the eigenvector corresponding to the 1st eigenvalue
+#'user/v1
 
-user=> (def pc2 (sel R :cols 1))
-#'user/pc2
+user=> (def v2 (sel R :cols 1))  ;; the eigenvector corresponding to the 2nd eigenvalue
+#'user/v2
 
 ;; this is to make the plot (x1, x2) on a standardized scale only. it does not change the results of the function of principal-components when using unstandardized X
 user=> (def X_standardized (sel standardized_data :cols (range 5 9)))
@@ -274,16 +274,16 @@ user=> (def X_standardized (sel standardized_data :cols (range 5 9)))
 
 ;; see Dimensionality reduction in https://en.wikipedia.org/wiki/Principal_component_analysis 
 ;; the transformation T = X R maps a data vector x(i) from an original space of p variables to a new space of p variables which are uncorrelated over the dataset.
-user=> (def x1 (mmult X_standardized pc1))  ;; X should be standardized first
-#'user/x1
+user=> (def pc1 (mmult X_standardized v1))  ;; X should be standardized first
+#'user/pc1
 
-user=> (def x2 (mmult X_standardized pc2))  ;; X should be standardized first
-#'user/x2
+user=> (def pc2 (mmult X_standardized v2))  ;; X should be standardized first
+#'user/pc2
 
-user=> (doto (scatter-plot (sel x1 :rows (range 0 50)) (sel x2 :rows (range 0 50))
+user=> (doto (scatter-plot (sel pc1 :rows (range 0 50)) (sel pc2 :rows (range 0 50))
                     :x-label "PC1" :y-label "PC2" :title "Iris PCA")
-      (add-points (sel x1 :rows (range 50 100)) (sel x2 :rows (range 50 100)))
-      (add-points (sel x1 :rows (range 100 150)) (sel x2 :rows (range 100 150)))
+      (add-points (sel pc1 :rows (range 50 100)) (sel pc2 :rows (range 50 100)))
+      (add-points (sel pc1 :rows (range 100 150)) (sel pc2 :rows (range 100 150)))
       view)
 ```
 
