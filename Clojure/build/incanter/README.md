@@ -218,6 +218,16 @@ user=> pc
 -0.5649 -0.0669 -0.6343  0.5236]
 }
 
+user=> (def eigenvalues (pow (:std-dev pc) 2))
+#'user/eigenvalues
+
+user=> eigenvalues
+(2.9184978165319944 0.9140304714680697 0.14675687557131548 0.020714836428619664)
+
+;; https://stats.stackexchange.com/questions/22569/pca-and-proportion-of-variance-explained
+user=> (sum eigenvalues) ;; sum of eigenvalues is the sum of the diagnoal of the correlation matrix = 4
+3.999999999999999
+
 ;; R is a p-by-p matrix of weights whose columns are the eigenvectors of X'X 
 user=> (def R (:rotation pc))
 #'user/R
