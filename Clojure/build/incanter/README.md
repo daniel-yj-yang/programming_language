@@ -168,6 +168,12 @@ user=> (def Eigenvectors (:vectors (decomp-eigenvalue Q)))
 user=> (def L (diag Eigenvalues)) ;; the uppercase greek letter of lambda (Λ)
 #'user/L
 
+user=> (sum (diag Q))
+4.572957046979864
+
+user=> (sum (diag L))  ;; L captures the variance of Q
+4.572957046979866
+
 user=> (def W Eigenvectors)
 #'user/W
 
