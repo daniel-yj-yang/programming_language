@@ -214,17 +214,17 @@ user=> (sel Eigenvectors :cols 3)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; this is equivalent to R's prcomp(center = T, scale. = T)
-user=> (def pc (principal-components X)) 
-#'user/pc
+user=> (def pc_results (principal-components X)) 
+#'user/pc_results
 
-user=> pc
+user=> pc_results
 {:std-dev (1.7083611493276223 0.9560494084868573 0.38308860015839086 0.14392649661761264), :rotation [-0.5211 -0.3774  0.7196  0.2613
  0.2693 -0.9233 -0.2444 -0.1235
 -0.5804 -0.0245 -0.1421 -0.8014
 -0.5649 -0.0669 -0.6343  0.5236]
 }
 
-user=> (def eigenvalues (pow (:std-dev pc) 2))
+user=> (def eigenvalues (pow (:std-dev pc_results) 2))
 #'user/eigenvalues
 
 user=> eigenvalues
@@ -235,7 +235,7 @@ user=> (sum eigenvalues) ;; sum of eigenvalues is the sum of the diagnoal of the
 3.999999999999999
 
 ;; R is a p-by-p matrix of weights whose columns are the eigenvectors of X'X 
-user=> (def R (:rotation pc))
+user=> (def R (:rotation pc_results))
 #'user/R
 
 user=> R  ;; the rotation matrix, 4 x 4
