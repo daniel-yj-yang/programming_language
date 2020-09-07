@@ -213,6 +213,17 @@ user=> (sel Eigenvectors :cols 3)
  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+user=> (source principal-components) ;; one can see that decomp-svd, not decomp-eigenvalue, is used in this function
+(defn principal-components
+" ... (skiped ... "
+  ([x & options]
+   (let [svd (decomp-svd (correlation x))
+         rotation (:V svd)
+         std-dev (sqrt (:S svd))]
+     {:std-dev std-dev
+      :rotation rotation})))
+nil
+
 ;; this is equivalent to R's prcomp(center = T, scale. = T)
 user=> (def pc_results (principal-components X)) 
 #'user/pc_results
