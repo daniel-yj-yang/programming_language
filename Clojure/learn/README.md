@@ -1,0 +1,1 @@
+- A <a href="./clojure.org-learning-guide/>learning guide</a> based on clojure.org but with my own examples
