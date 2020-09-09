@@ -19,7 +19,7 @@ By default, lein stores downloaded <a href="https://clojars.org/">dependencies</
 
 As described <a href="https://github.com/technomancy/leiningen/blob/master/sample.project.clj">here</a>, this default path can be changed by putting a <b>profiles.clj</b> in ~/.lein, as following:
 
-```clj
+```Clojure
 {:user  {;Location of local repository 
          :local-repo "Drive/Path"
          ;Location of locally installed jars
