@@ -11,7 +11,7 @@ Build ML applications with Clojure
 
 ## Machine learning
 
-- <a href="./neural_networks">Neural Networks</a> https://dragan.rocks/articles/19/Deep-Learning-in-Clojure-From-Scratch-to-GPU-0-Why-Bother
+- <a href="./neural_networks">Neural Networks</a>
 
 <hr>
 
