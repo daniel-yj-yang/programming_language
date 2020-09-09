@@ -4,7 +4,7 @@ lein: https://leiningen.org/
 
 Usage:
 
-1. "<a href="https://cljdoc.org/d/leiningen/leiningen/2.9.4/api/leiningen.new">new</a>" - Generate project scaffolding based on a <a href="https://clj-templates.com/">template</a>.
+1. "<a href="https://cljdoc.org/d/leiningen/leiningen/2.9.4/api/leiningen.new">new</a>": Generate project scaffolding based on a <a href="https://clj-templates.com/">template</a>.
 
 Using the template "app" to create project "clojure-app"
 ```
@@ -13,7 +13,7 @@ lein new app clojure-app
 
 <hr>
 
-2. "<a href="https://cljdoc.org/d/leiningen/leiningen/2.9.4/api/leiningen.deps">deps</a>" - Download and examine dependencies
+2. "<a href="https://cljdoc.org/d/leiningen/leiningen/2.9.4/api/leiningen.deps">deps</a>": Download and examine dependencies
 
 By default, lein stores downloaded <a href="https://clojars.org/">dependencies</a> in the default path ~/.m2/repository/
 
@@ -30,4 +30,5 @@ As described <a href="https://github.com/technomancy/leiningen/blob/master/sampl
 
 <hr>
 
-3. "<a href="https://cljdoc.org/d/leiningen/leiningen/2.9.4/api/leiningen.run">run</a>"
+3. "<a href="https://cljdoc.org/d/leiningen/leiningen/2.9.4/api/leiningen.run">run</a>": Run a -main function with optional command-line arguments.
+
