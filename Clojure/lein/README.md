@@ -30,4 +30,4 @@ As described <a href="https://github.com/technomancy/leiningen/blob/master/sampl
 
 <hr>
 
-3. run
+3. <a href="https://cljdoc.org/d/leiningen/leiningen/2.9.4/api/leiningen.run">run</a>
