@@ -27,3 +27,7 @@ As described <a href="https://github.com/technomancy/leiningen/blob/master/sampl
          :repositories  {"local" {:url "file://Drive/Path"
                                   :releases {:checksum :ignore}}}}}
 ```
+
+<hr>
+
+3. run
