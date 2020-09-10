@@ -8,14 +8,40 @@
 
 ### Use incanter
 
-##### 1. specify $INCANTER_HOME in the shell configuration file
+##### Method 1: use the clojure 1.2.0 shipped with incanter
 
-##### 2. cd $INCANTER_HOME and script/repl
-
-##### 3. load library
+1. specify $INCANTER_HOME in the shell configuration file
+2. cd $INCANTER_HOME and run <b>script/repl</b>
+3. try to load library
 
 ```Clojure
-(use '(incanter core stats charts datasets))
+user=> (use '(incanter core stats charts datasets))
+nil
+```
+
+##### Method 2: use the clojure as installed on the computer
+
+1. lein repl
+2. try to load library
+
+```Clojure
+user=> (use '(incanter core stats charts datasets))
+nil
+```
+
+If encountering the following error message about classpath
+
+```Clojure
+user=> (use '(incanter core stats charts datasets))
+Execution error (FileNotFoundException) at user/eval1585 (form-init8310687567371780121.clj:1).
+Could not locate incanter/core__init.class, incanter/core.clj or incanter/core.cljc on classpath.
+```
+
+Try to modify the ~/.lein/profiles.clj by adding :dependencies,
+
+```
+{:user  {:dependencies [[org.clojure/clojure "1.9.0"]
+                        [incanter "1.9.3"]]}}
 ```
 
 <hr>
