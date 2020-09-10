@@ -19,6 +19,8 @@ user=> (use '(incanter core stats charts datasets))
 nil
 ```
 
+<hr>
+
 ##### Method 2: use the clojure as installed on the computer
 
 1. lein repl
