@@ -6,7 +6,7 @@
 
 <hr>
 
-### Use incanter
+### Use <a href="https://github.com/incanter/incanter">incanter</a> and <a href="https://mikera.github.io/core.matrix/doc/clojure.core.matrix.html">clojure.core.matrix</a>
 
 ##### Method 1: use the clojure 1.2.0 shipped with incanter
 
@@ -15,6 +15,9 @@
 3. try to load library
 
 ```Clojure
+user=> (use 'clojure.core.matrix)
+nil
+
 user=> (use '(incanter core stats charts datasets))
 nil
 ```
@@ -27,6 +30,9 @@ nil
 2. try to load library
 
 ```Clojure
+user=> (use 'clojure.core.matrix)
+nil
+
 user=> (use '(incanter core stats charts datasets))
 nil
 ```
@@ -161,7 +167,7 @@ user=> (def colmeans (div (map sum (trans X)) nrows))
 user=> colmeans
 (5.843333333333335 3.057333333333334 3.7580000000000027 1.199333333333334)
 
-user=> (def colmeans_matrix (mmult (matrix 1 nrows 1) (trans colmeans)))
+user=> (def colmeans_matrix (mmult (matrix 1 nrows 1) (matrix colmeans 4)))
 #'user/colmeans_matrix
 
 user=> (def C (minus X colmeans_matrix))   
