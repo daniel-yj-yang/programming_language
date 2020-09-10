@@ -141,6 +141,12 @@ user=> (ccm/mmul B A)
 ##### <a herf="https://github.com/incanter/incanter/wiki/Statistics-Examples">PCA</a>
 
 ```Clojure
+user=> (clojure-version)
+"1.10.1"
+
+user=> *clojure-version*
+{:major 1, :minor 10, :incremental 1, :qualifier nil}
+
 user=> (def iris (to-matrix (get-dataset :iris)))
 #'user/iris
 
