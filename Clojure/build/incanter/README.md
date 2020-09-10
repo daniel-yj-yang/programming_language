@@ -172,7 +172,7 @@ user=> (def colmeans (div (map sum (trans X)) nrows))
 user=> colmeans
 (5.843333333333335 3.057333333333334 3.7580000000000027 1.199333333333334)
 
-user=> (def colmeans_matrix (mmult (matrix 1 nrows 1) (matrix colmeans 4)))
+user=> (def colmeans_matrix (ccm/mmul (matrix 1 nrows 1) (matrix colmeans 4)))
 #'user/colmeans_matrix
 
 user=> (def C (minus X colmeans_matrix))   
@@ -187,7 +187,7 @@ user=> Q
  1.2743 -0.3297  3.1163  1.2956
  0.5163 -0.1216  1.2956  0.5810]
 
-user=> (div (mmult (trans C) C) (- nrows 1)) # Covariance matrix crafted by hand, Q = X'X / (n-1)
+user=> (div (ccm/mmul (ccm/transpose C) C) (- nrows 1)) # Covariance matrix crafted by hand, Q = X'X / (n-1)
 [ 0.6857 -0.0424  1.2743  0.5163
 -0.0424  0.1900 -0.3297 -0.1216
  1.2743 -0.3297  3.1163  1.2956
