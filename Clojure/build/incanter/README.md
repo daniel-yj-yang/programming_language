@@ -18,6 +18,9 @@
 user=> (require '[clojure.core.matrix :as ccm])
 nil
 
+user=> (require '[clojure.core.matrix.linear :as ccml])
+nil
+
 user=> (use '(incanter core stats charts datasets))
 nil
 ```
@@ -31,6 +34,9 @@ nil
 
 ```Clojure
 user=> (require '[clojure.core.matrix :as ccm])
+nil
+
+user=> (require '[clojure.core.matrix.linear :as ccml])
 nil
 
 user=> (use '(incanter core stats charts datasets))
@@ -48,8 +54,7 @@ Could not locate incanter/core__init.class, incanter/core.clj or incanter/core.c
 Try to modify the ~/.lein/profiles.clj by adding :dependencies, as described <a href="https://github.com/incanter/incanter">here</a>:
 
 ```
-{:user  {:dependencies [[org.clojure/clojure "1.9.0"]
-                        [incanter "1.9.3"]]}}
+{:user  {:dependencies [[incanter "1.9.3"]]}}
 ```
 
 <hr>
