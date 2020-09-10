@@ -157,16 +157,16 @@ user=> (def standardized_data (to-matrix (with-data (get-dataset :iris)
 #'user/standardized_data
 
 ;; to see the same results in the hand-crafted results as the function of principal-components, use the range(5 9) version
-;;user=> (def X (sel standardized_data :cols (range 5 9)))  ;; column #5 is the class (0,1,2). not using it
-user=> (def X (sel standardized_data :cols (range 0 4)))  ;; column #5 is the class (0,1,2). not using it
-#'user/X
+;;user=> (def X_raw (sel standardized_data :cols (range 5 9)))  ;; column #5 is the class (0,1,2). not using it
+user=> (def X_raw (sel standardized_data :cols (range 0 4)))  ;; column #5 is the class (0,1,2). not using it
+#'user/X_raw
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; to calculate PCA by hand, see this: https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/
-user=> (def nrows (get (dim X) 0))
+user=> (def nrows (get (dim X_raw) 0))
 #'user/nrows
 
-user=> (def colmeans (div (map sum (trans X)) nrows))
+user=> (def colmeans (div (map sum (trans X_raw)) nrows))
 #'user/colmeans
 
 user=> colmeans
@@ -175,10 +175,10 @@ user=> colmeans
 user=> (def colmeans_matrix (ccm/mmul (matrix 1 nrows 1) (matrix colmeans 4)))
 #'user/colmeans_matrix
 
-user=> (def C (minus X colmeans_matrix))   
+user=> (def X (minus X_raw colmeans_matrix))   
 #'user/C
 
-user=> (def Q (covariance C))
+user=> (def Q (covariance X))
 #'user/Q
 
 user=> Q
@@ -187,7 +187,7 @@ user=> Q
  1.2743 -0.3297  3.1163  1.2956
  0.5163 -0.1216  1.2956  0.5810]
 
-user=> (div (ccm/mmul (ccm/transpose C) C) (- nrows 1)) # Covariance matrix crafted by hand, Q = X'X / (n-1)
+user=> (ccm/div (ccm/mmul (ccm/transpose X) X) (- nrows 1)) ; Covariance matrix crafted by hand, Q = X'X / (n-1)
 [ 0.6857 -0.0424  1.2743  0.5163
 -0.0424  0.1900 -0.3297 -0.1216
  1.2743 -0.3297  3.1163  1.2956
@@ -207,28 +207,28 @@ user=> (def Eigenvectors (:vectors (decomp-eigenvalue Q)))
 user=> (def L (diag Eigenvalues)) ;; the uppercase greek letter of lambda (Λ)
 #'user/L
 
-user=> (sum (diag Q))
+user=> (ccm/esum (ccm/main-diagonal Q))
 4.572957046979864
 
-user=> (sum (diag L))  ;; L captures the variance of Q
+user=> (ccm/esum (ccm/main-diagonal L))  ;; L captures the variance of Q
 4.572957046979866
 
 user=> (def W Eigenvectors)
 #'user/W
 
-user=> (mmult W (trans W)) ;; Importantly, WW' = W'W = I as W is orthonormal
+user=> (ccm/mmul W (ccm/transpose W)) ;; Importantly, WW' = W'W = I as W is orthonormal
 [1.0000  0.0000  0.0000  0.0000
 0.0000  1.0000 -0.0000 -0.0000
 0.0000 -0.0000  1.0000  0.0000
 0.0000 -0.0000  0.0000  1.0000]
 
-user=> (mmult (mmult W L) (trans W)) ;; Interestingly, Q = WΛW'
+user=> (ccm/mmul (ccm/mmul W L) (ccm/transpose W)) ;; Interestingly, Q = WΛW'
 [ 0.6857 -0.0424  1.2743  0.5163
 -0.0424  0.1900 -0.3297 -0.1216
  1.2743 -0.3297  3.1163  1.2956
  0.5163 -0.1216  1.2956  0.5810]
  
-user=> (mmult (mmult (trans W) Q) W) ;; Interestingly, Λ = W'QW
+user=> (ccm/mmul (ccm/mmul (ccm/transpose W) Q) W) ;; Interestingly, Λ = W'QW
 [0.0238 -0.0000 -0.0000 0.0000
 0.0000  0.0782 -0.0000 0.0000
 0.0000 -0.0000  0.2427 0.0000
@@ -249,7 +249,21 @@ user=> (sel Eigenvectors :cols 3)
 -0.0845
  0.8567
  0.3583]
- 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+user=> (def svd_results (ccml/svd X))
+#'user/svd_results
+
+user=> (def W (ccm/transpose (:V* svd_results)))
+#'user/W
+
+user=> W ;; Eigenvectors, the order is the opposite of decomp-eigenvalue, it is now PC1, PC2, PC3, PC4, for each col
+#vectorz/matrix [[0.36138659178536836,-0.6565887712868405,0.5820298513060651,-0.3154871929039772],
+[-0.0845225140645686,-0.7301614347850278,-0.5979108301000843,0.3197231036661293],
+[0.8566706059498352,0.1733726627958563,-0.07623607582096233,0.47983898699463395],
+[0.35828919715155066,0.07548101991746378,-0.5458314320200766,-0.7536574252640443]]
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 user=> (source principal-components) ;; one can see that decomp-svd, not decomp-eigenvalue, is used in this function
