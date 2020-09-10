@@ -35,6 +35,7 @@ user=> A
 
 user=> (type A)
 mikera.matrixx.Matrix
+```
 
 user=> (ccml/svd A)
 {:U #vectorz/matrix [[0.7071067811865474,0.7071067811865474],
