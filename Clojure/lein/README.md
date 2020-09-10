@@ -17,7 +17,7 @@ lein new app clojure-app
 
 By default, lein stores downloaded <a href="https://clojars.org/">dependencies</a> in the default path ~/.m2/repository/
 
-As described <a href="https://github.com/technomancy/leiningen/blob/master/sample.project.clj">here</a> or in "<a href="./lein_help_profiles.md">lein help profiles</a>", this default path can be changed by putting a <b>profiles.clj</b> in ~/.lein, as following:
+As described <a href="https://github.com/technomancy/leiningen/blob/master/sample.project.clj">here</a> or in "<a href="./lein_help_profiles.md">lein help profiles</a>", this default path can be changed by putting a <b>profiles.clj</b> in ~/.lein/, as following:
 
 ```Clojure
 {:user  {;Location of local repository 
