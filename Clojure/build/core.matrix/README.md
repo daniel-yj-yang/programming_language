@@ -58,4 +58,4 @@ user=> A
 
 user=> (type A)
 mikera.matrixx.Matrix
-
+```
