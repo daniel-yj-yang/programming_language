@@ -15,7 +15,7 @@
 3. try to load library
 
 ```Clojure
-user=> (use 'clojure.core.matrix)
+user=> (require '[clojure.core.matrix :as ccm])
 nil
 
 user=> (use '(incanter core stats charts datasets))
@@ -30,7 +30,7 @@ nil
 2. try to load library
 
 ```Clojure
-user=> (use 'clojure.core.matrix)
+user=> (require '[clojure.core.matrix :as ccm])
 nil
 
 user=> (use '(incanter core stats charts datasets))
