@@ -18,7 +18,7 @@
 user=> (use 'clojure.core.matrix)
 nil
 
-user=> (use '(incanter stats charts datasets))
+user=> (use '(incanter core stats charts datasets))
 nil
 ```
 
@@ -33,7 +33,7 @@ nil
 user=> (use 'clojure.core.matrix)
 nil
 
-user=> (use '(incanter stats charts datasets))
+user=> (use '(incanter core stats charts datasets))
 nil
 ```
 
