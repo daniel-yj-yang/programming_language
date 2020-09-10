@@ -6,7 +6,7 @@
 
 <hr>
 
-### Use <a href="https://github.com/incanter/incanter">incanter</a> and <a href="https://mikera.github.io/core.matrix/doc/clojure.core.matrix.html">clojure.core.matrix</a>
+### Use <a href="https://github.com/incanter/incanter">incanter</a> and <a href="https://cljdoc.org/d/net.mikera/core.matrix/0.62.0/api/clojure.core.matrix">clojure.core.matrix</a>
 
 ##### Method 1: use the clojure 1.2.0 shipped with incanter
 
@@ -54,7 +54,7 @@ Could not locate incanter/core__init.class, incanter/core.clj or incanter/core.c
 Try to modify the ~/.lein/profiles.clj by adding :dependencies, as described <a href="https://github.com/incanter/incanter">here</a>:
 
 ```
-{:user  {:dependencies [[incanter "1.9.3"]]}}
+{:user  {:dependencies [[net.mikera/core.matrix "0.62.0"] [incanter "1.9.3"]]}}
 ```
 
 <hr>
@@ -176,7 +176,7 @@ user=> (def colmeans_matrix (ccm/mmul (matrix 1 nrows 1) (matrix colmeans 4)))
 #'user/colmeans_matrix
 
 user=> (def X (minus X_raw colmeans_matrix))   
-#'user/C
+#'user/X
 
 user=> (def Q (covariance X))
 #'user/Q
@@ -255,14 +255,14 @@ user=> (sel Eigenvectors :cols 3)
 user=> (def svd_results (ccml/svd X))
 #'user/svd_results
 
-user=> (def W (ccm/transpose (:V* svd_results)))
-#'user/W
-
-user=> W ;; Eigenvectors, the order is the opposite of decomp-eigenvalue, it is now PC1, PC2, PC3, PC4, for each col
+user=> (ccm/transpose (:V* svd_results)) ;; Eigenvectors, the order is the opposite of decomp-eigenvalue, it is now PC1, PC2, PC3, PC4, for each col
 #vectorz/matrix [[0.36138659178536836,-0.6565887712868405,0.5820298513060651,-0.3154871929039772],
 [-0.0845225140645686,-0.7301614347850278,-0.5979108301000843,0.3197231036661293],
 [0.8566706059498352,0.1733726627958563,-0.07623607582096233,0.47983898699463395],
 [0.35828919715155066,0.07548101991746378,-0.5458314320200766,-0.7536574252640443]]
+
+user=> (div (pow (:S svd_results) 2) (- nrows 1)) ;; Eigenvalues, it is now PC1, PC2, PC3, PC4
+#vectorz/vector [4.2282417060348685,0.24267074792863386,0.0782095000429193,0.023835092973449372]
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
