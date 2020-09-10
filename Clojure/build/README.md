@@ -3,8 +3,8 @@ Build ML applications with Clojure
 
 <hr>
 
-### Use <a href="./incanter">incanter</a>, a computing and graphics API environment for the JVM
-### Use <a href="https://github.com/mikera/core.matrix/wiki">core.matrix</a>
+### <a href="./incanter">Use incanter</a>, a computing and graphics API environment for the JVM
+### <a href="./core.matrix">Use core.matrix</a>
 
 <hr>
 
