@@ -66,10 +66,14 @@ Required-by: torchvision, torch, yellowbrick, umap-learn, tensorflow, tensorboar
 
 ## <a href="https://packaging.python.org/tutorials/packaging-projects/">Create a Python package</a>
 
+Key commands to execute under the project directory:
+
+1. Build
 ```
 python3 setup.py sdist bdist_wheel
 ```
 
+2. Upload
 ```
 python3 -m twine upload dist/*
 ```
