@@ -2,7 +2,7 @@ Use <a href="https://pip.pypa.io/en/stable/">pip</a> to manage packages.
 
 <hr>
 
-To see the location of pip.conf on Mac:
+To see the location of <a href="https://pip.pypa.io/en/stable/user_guide/#config-file">pip.conf</a> on Mac:
 
 ```
 pip config list -v
