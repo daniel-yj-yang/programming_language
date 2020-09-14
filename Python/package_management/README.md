@@ -29,6 +29,14 @@ pip install torch torchvision
 
 <hr>
 
+Show detail about a installed package.
+
+```
+pip show -f twine
+```
+
+<hr>
+
 Check module version and module load path
 
 Method#1: use Python
