@@ -37,6 +37,15 @@ pip show --files twine
 
 <hr>
 
+Difficulty in finding commandline tool?
+
+Try the following location:
+```
+/Users/<username>/Python-library/bin
+```
+
+<hr>
+
 Check module version and module load path
 
 Method#1: use Python
