@@ -64,7 +64,7 @@ Required-by: torchvision, torch, yellowbrick, umap-learn, tensorflow, tensorboar
 
 <hr>
 
-## Create one's own package
+## <a href="https://packaging.python.org/tutorials/packaging-projects/">Create a Python package</a>
 
 ```
 python3 setup.py sdist bdist_wheel
