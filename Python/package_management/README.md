@@ -62,3 +62,14 @@ Requires:
 Required-by: torchvision, torch, yellowbrick, umap-learn, tensorflow, tensorboard, tables, statsmodels, seaborn, scipy, scikit-learn, PyWavelets, patsy, pandas, opt-einsum, numexpr, numba, mkl-random, mkl-fft, matplotlib, Keras-Preprocessing, imageio, h5py, Bottleneck, bokeh, bkcharts, astropy, altair
 ```
 
+<hr>
+
+## Create one's own package
+
+```
+python3 setup.py sdist bdist_wheel
+```
+
+```
+python3 -m twine upload dist/*
+```
