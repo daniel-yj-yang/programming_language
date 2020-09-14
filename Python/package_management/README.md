@@ -32,7 +32,7 @@ pip install torch torchvision
 Show detail about a installed package.
 
 ```
-pip show -f twine
+pip show --files twine
 ```
 
 <hr>
