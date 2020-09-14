@@ -101,7 +101,7 @@ twine upload dist/*
 
 <hr>
 
-### version number
+### Version number
 
 https://packaging.python.org/guides/single-sourcing-package-version/
 
