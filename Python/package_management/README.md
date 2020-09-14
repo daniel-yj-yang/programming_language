@@ -99,6 +99,8 @@ or
 twine upload dist/*
 ```
 
+<hr>
+
 ### version number
 
 https://packaging.python.org/guides/single-sourcing-package-version/
