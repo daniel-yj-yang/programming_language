@@ -101,6 +101,11 @@ twine upload -r <repo_name> dist/*
 twine upload -r testpypi dist/*
 ```
 
+3. Check
+```
+twine check dist/*
+```
+
 <hr>
 
 ### Version number
