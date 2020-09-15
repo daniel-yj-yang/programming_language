@@ -92,11 +92,13 @@ python3 setup.py sdist bdist_wheel
 
 2. Upload
 ```
-python3 -m twine upload --repository <project_name> dist/* 
+python3 -m twine upload --repository <repo_name> dist/*
+python3 -m twine upload --repository testpypi dist/* 
 ```
 or
 ```
-twine upload -r <project_name> dist/*
+twine upload -r <repo_name> dist/*
+twine upload -r testpypi dist/*
 ```
 
 <hr>
