@@ -90,7 +90,12 @@ Key commands to execute under the project directory:
 python3 setup.py sdist bdist_wheel
 ```
 
-2. Upload
+2. Check
+```
+twine check dist/*
+```
+
+3. Upload
 ```
 python3 -m twine upload --repository <repo_name> dist/*
 python3 -m twine upload --repository testpypi dist/* 
@@ -99,11 +104,6 @@ or
 ```
 twine upload -r <repo_name> dist/*
 twine upload -r testpypi dist/*
-```
-
-3. Check
-```
-twine check dist/*
 ```
 
 <hr>
