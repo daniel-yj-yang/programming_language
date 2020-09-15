@@ -99,11 +99,13 @@ twine check dist/*
 ```
 python3 -m twine upload --repository <repo_name> dist/*
 python3 -m twine upload --repository testpypi dist/* 
+python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/* 
 ```
 or
 ```
 twine upload -r <repo_name> dist/*
 twine upload -r testpypi dist/*
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 ```
 
 <hr>
