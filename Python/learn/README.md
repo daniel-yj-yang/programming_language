@@ -25,4 +25,4 @@
 
 <hr>
 
-- <a href="struct.md">handling binary data</a>
+- <a href="struct.md">handling binary data</a> using struct
