@@ -6,6 +6,7 @@
 - <a href="class.md">class</a>
 - <a href="decorator.md">decorator</a>
 - <a href="common_decorators.md">common decorators</a>
+- <a href="metaclass.md">metaclass</a>
 
 <hr>
 
