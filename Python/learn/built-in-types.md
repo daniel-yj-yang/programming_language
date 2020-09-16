@@ -1,4 +1,4 @@
-without a trailing comma, a single-item tuple will be interpreted as a string.
+without a trailing comma, a single-item <a href="https://docs.python.org/3.3/library/stdtypes.html?highlight=tuple">tuple</a> will be interpreted as a string.
 ```
 >>> a = ('foo')
 >>> type(a)
