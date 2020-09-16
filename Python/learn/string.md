@@ -1,7 +1,17 @@
 
+### <a href="https://docs.python.org/3/library/string.html">common string operations</a>
+
+#### <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">string methods</a>
+
+- str.<b>strip</b>([chars]): removing the leading and trailing characters
+
+<hr>
+
+### format
+
 {0:0.0f}
 
-1. the first "zero" is the **field_name** (https://docs.python.org/2/library/string.html#format-string-syntax)<br/>
+1. the first "zero" is the **field_name** (see <a href="https://docs.python.org/3/library/string.html#format-string-syntax">format string syntax</a>)<br/>
 If it’s a number, it refers to a positional argument.<br/>
 Example:
 ```
@@ -9,7 +19,7 @@ Example:
 0.34 0.12
 ```
 
-2. the second "zero" is the **width** (https://docs.python.org/2/library/string.html#format-specification-mini-language)<br/>
+2. the second "zero" is the **width** (see <a href="https://docs.python.org/3/library/string.html#format-specification-mini-language">format specification mini-language</a><br/>
 Example:
 ```
 >>> print("{:8.2f}".format(1))
@@ -18,5 +28,5 @@ Example:
 00001.00
 ```
 
-3. the third "zero" is the **precision** (https://docs.python.org/2/library/string.html#format-specification-mini-language)
+3. the third "zero" is the **precision**
 
