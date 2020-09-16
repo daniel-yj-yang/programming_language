@@ -1,4 +1,8 @@
 
+- <a href="conventions.md">conventions</a>
+
+<hr>
+
 - <a href="class.md">class</a>
 - <a href="decorator.md">decorator</a>
 
