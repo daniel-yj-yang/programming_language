@@ -3,6 +3,11 @@ Python 3 <a href="https://docs.python.org/3/library/functions.html">built-in fun
 
 <hr>
 
+#### super()
+accessing parent class
+
+<hr>
+
 #### zip()
 parallel iteration
 
