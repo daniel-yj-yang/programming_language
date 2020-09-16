@@ -1,13 +1,15 @@
 
-### <a href="https://docs.python.org/3/library/string.html">common string operations</a>
+## <a href="https://docs.python.org/3/library/string.html">Common string operations</a>
 
-#### <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">string methods</a>
+<hr>
+
+### 1. <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">string methods</a>
 
 - str.<b>strip</b>([chars]): removing the leading and trailing characters
 
 <hr>
 
-### format
+### 2. <a href="https://docs.python.org/3/library/string.html#custom-string-formatting">string formatting</a>
 
 {0:0.0f}
 
