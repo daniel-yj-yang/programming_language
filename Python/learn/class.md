@@ -1,5 +1,5 @@
 
-class is an object constructor
+class is an object constructor; by default, classes are constructed using ```type()```.
 
 everything in Python is an object
 
