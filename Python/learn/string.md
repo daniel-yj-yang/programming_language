@@ -32,3 +32,16 @@ Example:
 
 3. the third "zero" is the **precision**
 
+<hr>
+
+## f-strings (aka., <a href="https://www.python.org/dev/peps/pep-0498/">Literal String Interpolation</a>)
+
+```
+>>> x1 = 'a'
+>>> x2 = 'b'
+>>> x3 = 'c'
+>>> f'{x1} {x2} {x3}'
+'a b c'
+>>> F'{x1} {x2} {x3}'
+'a b c'
+```
