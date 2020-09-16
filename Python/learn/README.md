@@ -5,5 +5,5 @@ Syntax:
 
 <hr>
 
-- <a href="string.md">string</a> and format
+- <a href="string.md">string</a> and format and operations
 - <a href="built-in-functions.md">built-in functions</a>
