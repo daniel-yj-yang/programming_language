@@ -6,4 +6,11 @@ Syntax:
 <hr>
 
 - <a href="string.md">string</a> operations (methods and formatting)
+
+<hr>
+
 - <a href="built-in-functions.md">built-in functions</a>
+
+<hr>
+
+- <a href="struct.md">handling binary data</a>
