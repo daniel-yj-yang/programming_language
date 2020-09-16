@@ -1,7 +1,7 @@
 
 {0:0.0f}
 
-1. the first "zero" is the "field_name" (https://docs.python.org/2/library/string.html#format-string-syntax)
+1. the first "zero" is the **field_name** (https://docs.python.org/2/library/string.html#format-string-syntax)
 If it’s a number, it refers to a positional argument, for example:
 Example:
 ```
@@ -9,7 +9,7 @@ Example:
 0.34 0.12
 ```
 
-2. the second "zero" is the width (https://docs.python.org/2/library/string.html#format-specification-mini-language)
+2. the second "zero" is the **width** (https://docs.python.org/2/library/string.html#format-specification-mini-language)
 Example:
 ```
 >>> print("{:8.2f}".format(1))
@@ -18,5 +18,5 @@ Example:
 00001.00
 ```
 
-3. the third "zero" is the precision (https://docs.python.org/2/library/string.html#format-specification-mini-language)
+3. the third "zero" is the **precision** (https://docs.python.org/2/library/string.html#format-specification-mini-language)
 
