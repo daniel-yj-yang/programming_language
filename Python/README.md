@@ -2,6 +2,6 @@
 
 - ### <a href="./learn">Learn</a>
 - ### <a href="./package_management">Package management</a>
-- ### <a href="./selected_modules">Selected modules</a>
+- ### <a href="./selected_libraries">Selected libraries</a>
 - ### <a href="./ml">Machine Learning applications</a>
 
