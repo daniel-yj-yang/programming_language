@@ -11,3 +11,7 @@ with a trailing comma, a single-item tuple will be correctly interpreted as a tu
 >>> type(a)
 <class 'tuple'>
 ```
+
+<hr>
+
+For a multiple-item tuple, the trailing comma is <a href="https://stackoverflow.com/questions/7992559/what-is-the-syntax-rule-for-having-trailing-commas-in-tuple-definitions">a good practice for style reason</a>.
