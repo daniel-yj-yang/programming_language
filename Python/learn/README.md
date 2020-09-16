@@ -1,5 +1,4 @@
 
-Syntax:
 - <a href="class.md">class</a>
 - <a href="decorator.md">decorator</a>
 
@@ -10,6 +9,10 @@ Syntax:
 <hr>
 
 - <a href="built-in-functions.md">built-in functions</a>
+
+<hr>
+
+- <a href="built-in-types.md">built-in types</a>
 
 <hr>
 
