@@ -1,4 +1,8 @@
 
+Python 3 <a href="https://docs.python.org/3/library/functions.html">built-in functions</a>
+
+<hr>
+
 #### zip()
 parallel iteration
 
