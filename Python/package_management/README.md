@@ -90,16 +90,31 @@ Key commands to execute under the project directory:
 python3 setup.py sdist bdist_wheel
 ```
 
-2. Check
+2a. (optional) Check readme rendering
+```
+python3 -m readme_renderer README.rst
+```
+
+2b. (optional) Check whether the distribution’s long description will render correctly on PyPI.
 ```
 python3 -m twine check dist/*
 ```
 
-3. Upload
+3a. (optional) test upload to testpypi, via one of the following:
 ```
 python3 -m twine upload --repository <repo_name> dist/*
-python3 -m twine upload --repository testpypi dist/* 
+python3 -m twine upload --repository testpypi dist/*
+```
+or
+```
+python3 -m twine upload --repository-url <repo_url> dist/*
 python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/* 
+```
+
+3b. officially test upload to pypi, via one of the following:
+```
+python3 -m twine upload --repository pypi dist/* 
+python3 -m twine upload --repository-url https://upload.pypi.org/legacy/ dist/* 
 ```
 
 <hr>
