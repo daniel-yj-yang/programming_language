@@ -90,7 +90,7 @@ Key commands to execute under the project directory:
 python3 setup.py sdist bdist_wheel
 ```
 
-2a. (optional) Check readme rendering
+2a. (optional) Check readme rendering as HTML
 ```
 python3 -m readme_renderer README.rst
 ```
