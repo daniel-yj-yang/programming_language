@@ -1,6 +1,8 @@
 
 <a href="https://www.programiz.com/python-programming/decorator">Decorator</a> is meta-programming
 
+A decorator wraps in a function, appends several functionalities to existing code and then returns it.
+
 <hr>
 
 #### 1. Decorating Functions Without Arguments
@@ -148,7 +150,17 @@ The answer is 3
 
 <hr>
 
-#### 4. The built-in <a href="https://docs.python.org/3/library/functions.html#property">`property()`</a> function and the `@property` decorator
+### Commonly used decorators
+
+Decorators | used to...
+--- | ---
+@classmethod | define methods inside a class namespace that are not connected to a particular instance of that class
+@staticmethod | (same as above)
+@property | customize getters and setters for class attributes
+
+<hr>
+
+#### The built-in <a href="https://docs.python.org/3/library/functions.html#property">`property()`</a> function and the `@property` decorator
 
 First, the syntax ot the property class/function:
 ```python3
