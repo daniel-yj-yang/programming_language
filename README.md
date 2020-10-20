@@ -6,4 +6,6 @@ Language | Characteristics
 <a href="./Python">Python</a> | - A general-purpose, versatile and popular programming language
 <a href="./R">R</a> | - A language and environment for statistical computing and graphics
 
+<Hr>
+  
 <a href="./general_coding_concepts.md">General_programming_concepts</a>
