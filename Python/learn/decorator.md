@@ -300,7 +300,7 @@ class distance(object):
 
 Example:
 
-```
+```python
 >>> d = distance(100)
 
 >>> d.in_inch
