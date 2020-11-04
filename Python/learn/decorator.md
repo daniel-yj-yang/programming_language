@@ -241,3 +241,73 @@ Original function: Setting amount to be 100 and storing it in the private _amoun
 Original function: Getting amount from the private _amount variable
 3000
 ```
+
+<hr>
+
+@decorator basically transforms a function as an scalar-like attibute 
+
+```python
+class distance(object):
+    def __init__(self, distance_in_meters=None):
+        self._distance_in_meters = 0.0
+        if distance_in_meters is not None:
+            self._distance_in_meters = distance_in_meters
+
+    @property
+    def in_meters(self):
+        return self._distance_in_meters
+
+    @in_meters.setter
+    def in_meters(self, val):
+        try:
+            self._distance_in_meters = float(val)
+        except:
+            raise ValueError("The input you have provided is invalid")
+
+    @property
+    def in_feet(self):
+        return self._distance_in_meters * 3.28084
+
+    @in_feet.setter
+    def in_feet(self, val):
+        try:
+            self._distance_in_meters = float(val) / 3.28084
+        except:
+            raise ValueError("The input you have provided is invalid")
+
+    @property
+    def in_cm(self):
+        return self._distance_in_meters * 100
+
+    @in_cm.setter
+    def in_cm(self, val):
+        try:
+            self._distance_in_meters = float(val) / 100
+        except:
+            raise ValueError("The input you have provided is invalid")
+
+    @property
+    def in_inch(self):
+        return self._distance_in_meters * 39.37008
+
+    @in_inch.setter
+    def in_inch(self, val):
+        try:
+            self._distance_in_meters = float(val) / 39.37008
+        except:
+            raise ValueError("The input you have provided is invalid")
+```
+
+Example:
+
+```
+>>> d = distance(100)
+
+>>> d.in_inch
+3937.0080000000003
+
+>>> d.in_feet = 9999
+
+>>> d.in_cm
+304769.5102473757
+```
