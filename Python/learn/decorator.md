@@ -244,7 +244,7 @@ Original function: Getting amount from the private _amount variable
 
 <hr>
 
-@decorator basically transforms a function as an scalar-like attibute 
+@decorator basically transforms a function as an scalar-like attibute for an object.
 
 ```python
 class distance(object):
